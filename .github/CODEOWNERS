@@ -1,5 +1,12 @@
 # Global owners for all guide files
-*       @your-github-username
+*       @lexer-kindle
 
 # Specific people can be assigned to specific console folders if needed
-/switch/ @your-switch-expert-friend
+/3ds/ @hacks.guide
+/wiiu/ @hacks.guide
+/vita/ @hacks.guide
+/wii/ @hacks.guide
+/switch/ @hacks.guide
+/ios/ @cfw.guide
+/cemu/ @cfw.guide
+/dsi/ @cfw.guide
