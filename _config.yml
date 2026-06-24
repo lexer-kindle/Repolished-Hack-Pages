@@ -1,22 +1,19 @@
 title: Hack0Guide
 description: The ultimate unified console modding archive and custom firmware resource.
-url: "https://eu.org"
-baseurl: ""
+url: "https://ahackersguide.serveftp.com/"
+baseurl: "https://ahackersguide.serveftp.com/"
 
 # Markdown settings
 markdown: kramdown
 highlighter: rouge
-
-# Exclude repository development metadata from being compiled into the live site
-exclude:
-  - .github/
-  - .gitignore
-  - LICENSE
-  - README.md
-  - Credits.txt
 
 # Keep special files visible to browsers
 include:
   - CNAME
   - robots.txt
   - sitemap.xml
+  - .github/
+  - .gitignore
+  - LICENSE
+  - README.md
+  - Credits.txt
