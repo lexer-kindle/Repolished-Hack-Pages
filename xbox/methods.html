@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Methods — Original Xbox Hacks Guide</title>
+<meta name="description" content="Original Xbox Hacks Guide — Methods.">
+<link rel="icon" href="../images/favicon.ico">
+<style>
+:root{--bg:#fff;--bg-soft:#f6f6f7;--bg-card:#fff;--border:#e2e2e3;--text:#213547;--text-soft:#5c6b77;--brand:#3451b2;--accent1:#0e6f10;--accent2:#54bf26;--warn-bg:#fff6e6;--warn-bd:#e0a93c;--warn-tx:#7a5500;--ok-bg:#eef4ff;--ok-bd:#3a5ccc}
+@media (prefers-color-scheme:dark){:root{--bg:#1b1b1f;--bg-soft:#202127;--bg-card:#202127;--border:#2e2e32;--text:#dfdfd6;--text-soft:#98989f;--brand:#a8b1ff;--warn-bg:#2a2310;--warn-bd:#9a7b2e;--warn-tx:#e8c66a;--ok-bg:#16202e;--ok-bd:#3a5ccc}}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
+header.site{border-bottom:1px solid var(--border);padding:14px 0;position:sticky;top:0;background:var(--bg);z-index:5}
+header.site .bar{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:16px}
+header.site .brand{font-weight:700;font-size:17px;color:var(--text)}
+header.site nav{margin-left:auto;display:flex;gap:18px;font-size:14px}
+header.site nav a{color:var(--text-soft)}
+.shell{max-width:1080px;margin:0 auto;padding:0 24px}
+.layout{display:flex;gap:34px;align-items:flex-start;padding:26px 0 10px}
+.sidebar{flex:0 0 216px;position:sticky;top:74px;font-size:14px}
+.sidebar .kick{font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--text-soft);margin:0 0 8px 10px}
+.sidebar a{display:block;padding:8px 11px;border-radius:8px;color:var(--text-soft);border-left:3px solid transparent}
+.sidebar a:hover{text-decoration:none;background:var(--bg-soft);color:var(--text)}
+.sidebar a.active{background:var(--ok-bg);border-left-color:var(--accent2);color:var(--text);font-weight:600}
+.sidebar .back{margin-bottom:12px}
+.content{flex:1;min-width:0;padding-bottom:30px}
+.content .badge{display:inline-block;padding:5px 13px;border-radius:999px;font-size:12px;font-weight:600;color:#fff;background:linear-gradient(120deg,var(--accent1),var(--accent2));margin-bottom:14px}
+.content h1{font-size:33px;line-height:1.15;margin:0 0 18px}
+.content h2{font-size:21px;margin:30px 0 12px}
+.content h3{font-size:16px;margin:20px 0 4px}
+.content p,.content li{font-size:15.5px}
+.callout{border:1px solid var(--ok-bd);background:var(--ok-bg);border-radius:12px;padding:16px 18px;margin:22px 0}
+.callout h2{margin:0 0 10px;font-size:17px}
+table.methods{width:100%;border-collapse:collapse;font-size:14.5px;margin:8px 0}
+table.methods th,table.methods td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+table.methods th{color:var(--text-soft);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.4px}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;margin-top:4px}
+.warn{border:1px solid var(--warn-bd);background:var(--warn-bg);color:var(--warn-tx);border-radius:12px;padding:15px 18px;margin:22px 0;font-size:14.5px}
+.warn strong{color:var(--warn-tx)}
+ol.phases{counter-reset:step;list-style:none;padding:0;margin:14px 0}
+ol.phases>li{position:relative;padding:13px 0 13px 50px;border-bottom:1px solid var(--border)}
+ol.phases>li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:12px;width:32px;height:32px;border-radius:50%;background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+ol.phases>li .t{font-weight:600;font-size:15.5px}
+ol.phases>li .d{color:var(--text-soft);font-size:14.5px;margin-top:2px}
+footer.site{border-top:1px solid var(--border);margin-top:30px;padding:22px 0;text-align:center;color:var(--text-soft);font-size:13px}
+@media (max-width:760px){.layout{flex-direction:column;padding-top:16px}.sidebar{position:static;flex:none;width:100%}.sidebar a{display:inline-block}}
+</style>
+</head>
+<body>
+<header class="site"><div class="bar"><a class="brand" href="../index.html">Hacks.Guide</a><nav><a href="../index.html">Home</a><a href="../donations.html">Donations</a></nav></div></header>
+<div class="shell"><div class="layout">
+<aside class="sidebar"><div class="back"><a href="../index.html">&larr; All guides</a></div>
+<p class="kick">Original Xbox</p>
+<a href="index.html">Overview</a>
+<a href="compatibility.html">Compatibility</a>
+<a href="requirements.html">What you&#x27;ll need</a>
+<a href="methods.html" class="active">Methods</a>
+<a href="installation.html">Installation</a>
+<a href="homebrew.html">Homebrew &amp; apps</a>
+<a href="troubleshooting.html">Troubleshooting</a>
+<a href="faq.html">FAQ</a>
+<a href="credits.html">Credits</a></aside>
+<main class="content">
+<span class="badge">Original Xbox</span>
+<h1>Methods</h1>
+<h2>Choosing a Modding Method</h2>
+<p>There are several ways to open up the original Xbox for homebrew. Each has different trade-offs in safety, permanence, and hardware requirements. Read all four below, then pick the one that matches your motherboard revision and comfort level.</p>
+
+<h3>ENDGAME Softmod (Recommended)</h3>
+<p>The <strong>ENDGAME softmod</strong>, delivered through Rocky5's <em>Xbox Softmodding Tool</em>, is the safest and most popular method. It is a <strong>save-based</strong> approach: you load a specially crafted game save that gains access to the system, then install a custom dashboard alongside the stock files. It requires <strong>no soldering</strong>, works on <strong>every motherboard revision from 1.0 to 1.6b</strong>, and is <strong>fully reversible</strong>. You can uninstall it cleanly and return the console to a stock state at any time. For the vast majority of users, this is the right choice and the one this guide focuses on.</p>
+
+<h3>TSOP Flashing</h3>
+<p><strong>TSOP flashing</strong> writes a custom BIOS directly to the Xbox's onboard flash memory chip. This makes the modification persist independently of the hard drive and removes the need for a save file on every boot. However, it is <strong>only possible on revisions 1.0 through 1.5</strong>. The 1.6 and 1.6b boards use a flash chip that cannot be reprogrammed, so TSOP is off the table for them. TSOP also carries more risk than a softmod: a bad flash can leave the board needing recovery, and the method typically requires bridging points on the motherboard. It is best left to experienced users.</p>
+
+<h3>Modchips</h3>
+<p>A <strong>modchip</strong> is a small circuit board added to the Xbox that supplies its own BIOS at boot. Modern options like the <strong>OpenXenium</strong> and the <strong>Aladdin XT</strong> and <strong>XT Plus2</strong> are popular because they are <strong>recovery-proof</strong>: even if the hard drive contents are wiped, the console still boots into a working modded environment. Modchips work on <strong>all revisions, including 1.6 and 1.6b</strong>, which makes them the go-to permanent solution for those later boards. The downside is that installation usually involves soldering or careful seating onto header points, so it demands more skill and the right tools.</p>
+
+<h3>HDD Upgrade</h3>
+<p>An <strong>HDD upgrade</strong> is not a modding method on its own but a common follow-up. Once the console is modded, you can replace the small original drive with a larger one to store more homebrew, emulators, and media. Because the drive is locked to the EEPROM key, you must have your <strong>EEPROM backed up</strong> and use the softmod tool's drive-preparation features to lock and format the new disk correctly. Do this only after a successful mod and a verified EEPROM backup.</p>
+
+<p><strong>Summary:</strong> choose the ENDGAME softmod if you want the safest reversible route on any board. Choose a modchip for a recovery-proof permanent setup, especially on 1.6 boards. Reserve TSOP for experienced users on 1.0 to 1.5 hardware.</p>
+</main>
+</div></div>
+<footer class="site"><div class="shell"><a href="../index.html">&larr; Back to Hacks.Guide</a> &nbsp;&middot;&nbsp; Sources &amp; attribution in Credits.txt &nbsp;&middot;&nbsp; Copyright &copy; 2024 Nintendo Homebrew + Compiled and polished by Lexer Kindle</div></footer>
+</body>
+</html>

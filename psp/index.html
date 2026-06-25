@@ -1,84 +1,87 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>PlayStation Portable Hacks Guide</title>
-    <meta name="description" content="Install Custom Firmware on virtually any PSP to run homebrew, emulators, and game backups from a Memory Stick.">
-    <link rel="icon" href="../images/favicon.ico">
-    <style>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PlayStation Portable Hacks Guide</title>
+<meta name="description" content="PlayStation Portable Hacks Guide — Overview.">
+<link rel="icon" href="../images/favicon.ico">
+<style>
 :root{--bg:#fff;--bg-soft:#f6f6f7;--bg-card:#fff;--border:#e2e2e3;--text:#213547;--text-soft:#5c6b77;--brand:#3451b2;--accent1:#0a2a72;--accent2:#1565d8;--warn-bg:#fff6e6;--warn-bd:#e0a93c;--warn-tx:#7a5500;--ok-bg:#eef4ff;--ok-bd:#3a5ccc}
 @media (prefers-color-scheme:dark){:root{--bg:#1b1b1f;--bg-soft:#202127;--bg-card:#202127;--border:#2e2e32;--text:#dfdfd6;--text-soft:#98989f;--brand:#a8b1ff;--warn-bg:#2a2310;--warn-bd:#9a7b2e;--warn-tx:#e8c66a;--ok-bg:#16202e;--ok-bd:#3a5ccc}}
 *{box-sizing:border-box}
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
 a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
-.wrap{max-width:840px;margin:0 auto;padding:0 24px}
-header.site{border-bottom:1px solid var(--border);padding:14px 0}
-header.site .wrap{display:flex;align-items:center;gap:16px}
-header.site .brand{font-weight:700;font-size:18px;color:var(--text)}
-header.site nav{margin-left:auto;display:flex;gap:20px;font-size:14px}
+header.site{border-bottom:1px solid var(--border);padding:14px 0;position:sticky;top:0;background:var(--bg);z-index:5}
+header.site .bar{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:16px}
+header.site .brand{font-weight:700;font-size:17px;color:var(--text)}
+header.site nav{margin-left:auto;display:flex;gap:18px;font-size:14px}
 header.site nav a{color:var(--text-soft)}
-.hero{padding:46px 0 6px}
-.badge{display:inline-block;padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600;color:#fff;background:linear-gradient(120deg,var(--accent1),var(--accent2));margin-bottom:16px}
-.hero h1{font-size:40px;line-height:1.1;margin:0 0 12px}
-.hero p.lede{font-size:19px;color:var(--text-soft);margin:0}
-h2{font-size:23px;margin:38px 0 14px}
-p,li{font-size:16px}
-.callout{border:1px solid var(--ok-bd);background:var(--ok-bg);border-radius:12px;padding:18px 20px;margin:24px 0}
-.callout h2{margin:0 0 12px;font-size:19px}
-table.methods{width:100%;border-collapse:collapse;font-size:15px;margin-top:6px}
+.shell{max-width:1080px;margin:0 auto;padding:0 24px}
+.layout{display:flex;gap:34px;align-items:flex-start;padding:26px 0 10px}
+.sidebar{flex:0 0 216px;position:sticky;top:74px;font-size:14px}
+.sidebar .kick{font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--text-soft);margin:0 0 8px 10px}
+.sidebar a{display:block;padding:8px 11px;border-radius:8px;color:var(--text-soft);border-left:3px solid transparent}
+.sidebar a:hover{text-decoration:none;background:var(--bg-soft);color:var(--text)}
+.sidebar a.active{background:var(--ok-bg);border-left-color:var(--accent2);color:var(--text);font-weight:600}
+.sidebar .back{margin-bottom:12px}
+.content{flex:1;min-width:0;padding-bottom:30px}
+.content .badge{display:inline-block;padding:5px 13px;border-radius:999px;font-size:12px;font-weight:600;color:#fff;background:linear-gradient(120deg,var(--accent1),var(--accent2));margin-bottom:14px}
+.content h1{font-size:33px;line-height:1.15;margin:0 0 18px}
+.content h2{font-size:21px;margin:30px 0 12px}
+.content h3{font-size:16px;margin:20px 0 4px}
+.content p,.content li{font-size:15.5px}
+.callout{border:1px solid var(--ok-bd);background:var(--ok-bg);border-radius:12px;padding:16px 18px;margin:22px 0}
+.callout h2{margin:0 0 10px;font-size:17px}
+table.methods{width:100%;border-collapse:collapse;font-size:14.5px;margin:8px 0}
 table.methods th,table.methods td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top}
-table.methods th{color:var(--text-soft);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.4px}
+table.methods th{color:var(--text-soft);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.4px}
 .tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;margin-top:4px}
-.checkfirst{margin-top:16px}
-.warn{border:1px solid var(--warn-bd);background:var(--warn-bg);color:var(--warn-tx);border-radius:12px;padding:16px 20px;margin:24px 0;font-size:15px}
+.warn{border:1px solid var(--warn-bd);background:var(--warn-bg);color:var(--warn-tx);border-radius:12px;padding:15px 18px;margin:22px 0;font-size:14.5px}
 .warn strong{color:var(--warn-tx)}
 ol.phases{counter-reset:step;list-style:none;padding:0;margin:14px 0}
-ol.phases>li{position:relative;padding:14px 0 14px 52px;border-bottom:1px solid var(--border)}
-ol.phases>li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:12px;width:34px;height:34px;border-radius:50%;background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
-ol.phases>li .t{font-weight:600;font-size:16px}
-ol.phases>li .d{color:var(--text-soft);font-size:15px;margin-top:2px}
-footer.site{border-top:1px solid var(--border);margin-top:56px;padding:24px 0;text-align:center;color:var(--text-soft);font-size:13px}
+ol.phases>li{position:relative;padding:13px 0 13px 50px;border-bottom:1px solid var(--border)}
+ol.phases>li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:12px;width:32px;height:32px;border-radius:50%;background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+ol.phases>li .t{font-weight:600;font-size:15.5px}
+ol.phases>li .d{color:var(--text-soft);font-size:14.5px;margin-top:2px}
+footer.site{border-top:1px solid var(--border);margin-top:30px;padding:22px 0;text-align:center;color:var(--text-soft);font-size:13px}
+@media (max-width:760px){.layout{flex-direction:column;padding-top:16px}.sidebar{position:static;flex:none;width:100%}.sidebar a{display:inline-block}}
 </style>
-  </head>
-  <body>
-    <header class="site">
-      <div class="wrap"><span class="brand">PlayStation Portable Hacks Guide</span><nav><a href="../index.html">Home</a></nav></div>
-    </header>
-    <main class="wrap">
-      <section class="hero">
-        <span class="badge">PlayStation Portable</span>
-        <h1>PlayStation Portable Hacks Guide</h1>
-        <p class="lede">Install Custom Firmware on virtually any PSP to run homebrew, emulators, and game backups from a Memory Stick.</p>
-      </section>
+</head>
+<body>
+<header class="site"><div class="bar"><a class="brand" href="../index.html">Hacks.Guide</a><nav><a href="../index.html">Home</a><a href="../donations.html">Donations</a></nav></div></header>
+<div class="shell"><div class="layout">
+<aside class="sidebar"><div class="back"><a href="../index.html">&larr; All guides</a></div>
+<p class="kick">PlayStation Portable</p>
+<a href="index.html" class="active">Overview</a>
+<a href="compatibility.html">Compatibility</a>
+<a href="requirements.html">What you&#x27;ll need</a>
+<a href="methods.html">Methods</a>
+<a href="installation.html">Installation</a>
+<a href="homebrew.html">Homebrew &amp; apps</a>
+<a href="troubleshooting.html">Troubleshooting</a>
+<a href="faq.html">FAQ</a>
+<a href="credits.html">Credits</a></aside>
+<main class="content">
+<span class="badge">PlayStation Portable</span>
+<h1>PlayStation Portable Hacks Guide</h1>
+<h2>PlayStation Portable Custom Firmware</h2>
+<p>The PlayStation Portable still has one of the most active homebrew scenes of any handheld, and custom firmware (CFW) is the doorway to all of it. Installing CFW replaces the limits Sony built into the official system software with a far more capable environment, while keeping the original menus and games working exactly as before. On a modern setup this means running the final official firmware, <strong>6.61</strong>, paired with a lightweight CFW such as <strong>ARK-4</strong> or <strong>6.61 PRO</strong>.</p>
 
-      <h2>What this is for</h2>
-      <p>The PSP has a mature, friendly custom-firmware scene: CFW unlocks homebrew, emulators, ISO loading, and plugins. Nearly every PSP can run CFW, either permanently or per-boot, and the process is one of the safer console mods.</p>
+<p>So what does CFW actually unlock? The short answer is the full software potential of the hardware:</p>
 
-      <div class="callout">
-        <h2>&#9881;&#65039; Methods, versions &amp; compatibility &mdash; read this first</h2>
-        <table class="methods">
-          <tr><th>Method</th><th>Works on</th><th>Notes</th></tr>
-          <tr><td><strong>ARK-4 / 6.61 PRO (CFW)</strong><br><span class="tag">CFW</span></td><td>All PSP models on firmware 6.61</td><td>Lightweight custom firmware; ARK-4 is the actively-maintained successor with broad model support including the Go and Street (E1000).</td></tr><tr><td><strong>6.61 Infinity</strong><br><span class="tag">CFW</span></td><td>Most PSP models on 6.61</td><td>Makes CFW permanent so it survives reboots without re-running an installer.</td></tr><tr><td><strong>Pandora&#x27;s Battery / hardware methods</strong><br><span class="tag">Hardware</span></td><td>Original PSP-1000 (and some 2000)</td><td>Recovery/older method using a modified battery; mostly for bricked units or very old firmware.</td></tr>
-        </table>
-        <p class="checkfirst"><strong>What to check first:</strong> 6.61 is the final official firmware and the target for modern CFW. Most PSPs can update to 6.61 and run CFW; the PSP Street (E1000) and Go have specific supported CFW (ARK-4). Check your firmware under Settings - System Settings - System Information before starting.</p>
-      </div>
+<ul>
+  <li><strong>Homebrew applications</strong> — free, community-made programs ranging from file managers and media players to ebook readers and system utilities.</li>
+  <li><strong>Emulators</strong> — play games from older platforms like the NES, SNES, Genesis, Game Boy, and arcade systems directly on the handheld.</li>
+  <li><strong>ISO and CSO loading</strong> — boot your own UMD game backups from the Memory Stick, so you can leave the discs at home and reduce wear on the UMD drive.</li>
+  <li><strong>Plugins</strong> — small add-ons that extend the system, adding features like screenshot tools, cheat support, custom themes, and performance tweaks.</li>
+</ul>
 
-      <div class="warn"><strong>&#9888;&#65039; Before you start:</strong> Console modding carries real risk &mdash; an interrupted install or the wrong method/file for your exact model can leave hardware unbootable. Identify your model first, back up anything important, and proceed at your own risk.</div>
+<p>CFW is widely considered one of the safer console modifications. Unlike some hardware-based hacks, the standard software install does not require opening the console, and a clean PSP running 6.61 can be set up entirely from the Memory Stick. The risk of a permanent brick is very low when you follow the steps in order and use the correct files for your firmware version.</p>
 
-      <h2>What you'll need</h2>
-      <ul><li>A PSP and its charger</li><li>A Memory Stick Pro Duo (or microSD + adapter / internal storage on the Go)</li><li>A computer with a Memory Stick reader</li><li>The CFW files (e.g. ARK-4 / 6.61 PRO) for your firmware</li></ul>
-
-      <h2>How it works &mdash; the process</h2>
-      <p>This walkthrough names the tools at each stage so you know what each one is and what it's for. Always use the latest release of each named tool.</p>
-      <ol class="phases"><li><div class="t">Check and update firmware</div><div class="d">Confirm your firmware in System Information; update to 6.61 (official) if needed, since modern CFW targets it.</div></li><li><div class="t">Copy the CFW files</div><div class="d">Place the CFW installer (ARK-4 / 6.61 PRO) onto your Memory Stick from a computer.</div></li><li><div class="t">Run the CFW installer</div><div class="d">Launch the installer from the PSP&#x27;s memory to boot into custom firmware.</div></li><li><div class="t">Make it permanent (optional)</div><div class="d">Install 6.61 Infinity so CFW survives reboots without re-running the installer.</div></li><li><div class="t">Set up homebrew</div><div class="d">Add homebrew apps, emulators, plugins, and your game backups to the Memory Stick.</div></li></ol>
-
-      <h2>Which option should I pick?</h2><p>For almost everyone: update to 6.61 and install ARK-4 (with Infinity for permanence). Reserve Pandora&#x27;s Battery methods for very old firmware or unbricking.</p>
-
-      <div class="warn" style="margin-top:34px"><strong>Disclaimer:</strong> This is an original guide written for Hacks.Guide, inspired by community documentation (see <em>Credits.txt</em>). Tools, firmware versions, and methods change over time &mdash; always get the latest official release of each named tool and follow its included instructions. Modding is done entirely at your own risk.</div>
-    </main>
-    <footer class="site">
-      <div class="wrap"><a href="../index.html">&larr; Back to Hacks.Guide</a> &nbsp;&middot;&nbsp; Sources &amp; attribution in Credits.txt &nbsp;&middot;&nbsp; Copyright &copy; 2024 Nintendo Homebrew + Compiled and polished by Lexer Kindle</div>
-    </footer>
-  </body>
+<p>This guide walks through everything in sequence: confirming your model, updating to 6.61, choosing between ARK-4/6.61 PRO and 6.61 Infinity, performing the install, and setting up homebrew. If you have never modified a console before, the PSP is a friendly place to start.</p>
+</main>
+</div></div>
+<footer class="site"><div class="shell"><a href="../index.html">&larr; Back to Hacks.Guide</a> &nbsp;&middot;&nbsp; Sources &amp; attribution in Credits.txt &nbsp;&middot;&nbsp; Copyright &copy; 2024 Nintendo Homebrew + Compiled and polished by Lexer Kindle</div></footer>
+</body>
 </html>

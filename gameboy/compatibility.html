@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Compatibility — Game Boy Hacks Guide</title>
+<meta name="description" content="Game Boy Hacks Guide — Compatibility.">
+<link rel="icon" href="../images/favicon.ico">
+<style>
+:root{--bg:#fff;--bg-soft:#f6f6f7;--bg-card:#fff;--border:#e2e2e3;--text:#213547;--text-soft:#5c6b77;--brand:#3451b2;--accent1:#b3000c;--accent2:#e60012;--warn-bg:#fff6e6;--warn-bd:#e0a93c;--warn-tx:#7a5500;--ok-bg:#eef4ff;--ok-bd:#3a5ccc}
+@media (prefers-color-scheme:dark){:root{--bg:#1b1b1f;--bg-soft:#202127;--bg-card:#202127;--border:#2e2e32;--text:#dfdfd6;--text-soft:#98989f;--brand:#a8b1ff;--warn-bg:#2a2310;--warn-bd:#9a7b2e;--warn-tx:#e8c66a;--ok-bg:#16202e;--ok-bd:#3a5ccc}}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
+header.site{border-bottom:1px solid var(--border);padding:14px 0;position:sticky;top:0;background:var(--bg);z-index:5}
+header.site .bar{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:16px}
+header.site .brand{font-weight:700;font-size:17px;color:var(--text)}
+header.site nav{margin-left:auto;display:flex;gap:18px;font-size:14px}
+header.site nav a{color:var(--text-soft)}
+.shell{max-width:1080px;margin:0 auto;padding:0 24px}
+.layout{display:flex;gap:34px;align-items:flex-start;padding:26px 0 10px}
+.sidebar{flex:0 0 216px;position:sticky;top:74px;font-size:14px}
+.sidebar .kick{font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--text-soft);margin:0 0 8px 10px}
+.sidebar a{display:block;padding:8px 11px;border-radius:8px;color:var(--text-soft);border-left:3px solid transparent}
+.sidebar a:hover{text-decoration:none;background:var(--bg-soft);color:var(--text)}
+.sidebar a.active{background:var(--ok-bg);border-left-color:var(--accent2);color:var(--text);font-weight:600}
+.sidebar .back{margin-bottom:12px}
+.content{flex:1;min-width:0;padding-bottom:30px}
+.content .badge{display:inline-block;padding:5px 13px;border-radius:999px;font-size:12px;font-weight:600;color:#fff;background:linear-gradient(120deg,var(--accent1),var(--accent2));margin-bottom:14px}
+.content h1{font-size:33px;line-height:1.15;margin:0 0 18px}
+.content h2{font-size:21px;margin:30px 0 12px}
+.content h3{font-size:16px;margin:20px 0 4px}
+.content p,.content li{font-size:15.5px}
+.callout{border:1px solid var(--ok-bd);background:var(--ok-bg);border-radius:12px;padding:16px 18px;margin:22px 0}
+.callout h2{margin:0 0 10px;font-size:17px}
+table.methods{width:100%;border-collapse:collapse;font-size:14.5px;margin:8px 0}
+table.methods th,table.methods td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+table.methods th{color:var(--text-soft);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.4px}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;margin-top:4px}
+.warn{border:1px solid var(--warn-bd);background:var(--warn-bg);color:var(--warn-tx);border-radius:12px;padding:15px 18px;margin:22px 0;font-size:14.5px}
+.warn strong{color:var(--warn-tx)}
+ol.phases{counter-reset:step;list-style:none;padding:0;margin:14px 0}
+ol.phases>li{position:relative;padding:13px 0 13px 50px;border-bottom:1px solid var(--border)}
+ol.phases>li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:12px;width:32px;height:32px;border-radius:50%;background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+ol.phases>li .t{font-weight:600;font-size:15.5px}
+ol.phases>li .d{color:var(--text-soft);font-size:14.5px;margin-top:2px}
+footer.site{border-top:1px solid var(--border);margin-top:30px;padding:22px 0;text-align:center;color:var(--text-soft);font-size:13px}
+@media (max-width:760px){.layout{flex-direction:column;padding-top:16px}.sidebar{position:static;flex:none;width:100%}.sidebar a{display:inline-block}}
+</style>
+</head>
+<body>
+<header class="site"><div class="bar"><a class="brand" href="../index.html">Hacks.Guide</a><nav><a href="../index.html">Home</a><a href="../donations.html">Donations</a></nav></div></header>
+<div class="shell"><div class="layout">
+<aside class="sidebar"><div class="back"><a href="../index.html">&larr; All guides</a></div>
+<p class="kick">Game Boy</p>
+<a href="index.html">Overview</a>
+<a href="compatibility.html" class="active">Compatibility</a>
+<a href="requirements.html">What you&#x27;ll need</a>
+<a href="methods.html">Methods</a>
+<a href="installation.html">Installation</a>
+<a href="homebrew.html">Homebrew &amp; apps</a>
+<a href="troubleshooting.html">Troubleshooting</a>
+<a href="faq.html">FAQ</a>
+<a href="credits.html">Credits</a></aside>
+<main class="content">
+<span class="badge">Game Boy</span>
+<h1>Compatibility</h1>
+<h2>Console Compatibility</h2>
+<p>Before buying a single part, identify exactly which Game Boy you own. The three classic models share a family resemblance but differ in size, board layout, and screen dimensions, and almost every hardware mod is cut to fit one specific shell. Buying a kit for the wrong model is the most common and most frustrating mistake a first-time modder makes.</p>
+
+<p>The <strong>DMG-01</strong> is the original 1989 brick: large, grey, with a green-tinted reflective LCD and four AA batteries. The <strong>Pocket (MGB)</strong> is the slimmer 1996 redesign with a true black-and-white screen and a much smaller board. The <strong>Color (CGB)</strong> arrived in 1998 with a color reflective screen and a faster processor. Their displays are physically different sizes, so an IPS panel, a backlight film, and even a bivert polarizer must all be ordered for the correct console.</p>
+
+<table class="methods">
+<tr><td><strong>Console</strong></td><td><strong>Screen kit</strong></td><td><strong>Flashcart</strong></td><td><strong>Notes</strong></td></tr>
+<tr><td>DMG (original)</td><td>FunnyPlaying Q5 IPS (DMG) or backlight</td><td>EverDrive-GB X7 / EZ-Flash Junior</td><td>DMG IPS install needs minor shell trimming</td></tr>
+<tr><td>Pocket (MGB)</td><td>MGB-specific IPS or backlight</td><td>EverDrive-GB X7 / EZ-Flash Junior</td><td>Smallest board; tight fit, no trimming usually</td></tr>
+<tr><td>Color (CGB)</td><td>CGB-specific IPS or backlight</td><td>EverDrive-GB X7 / EZ-Flash Junior</td><td>Runs both color and original GB titles</td></tr>
+</table>
+
+<p>The good news for game loading: both the <strong>EverDrive-GB X7</strong> and the <strong>EZ-Flash Junior</strong> work across all three consoles, since the cartridge slot is electrically the same. Color-only titles, however, will only run on a CGB. The <em>screen and audio</em> mods are where model matching is non-negotiable.</p>
+
+<p>One DMG-specific caveat: fitting a modern IPS panel into the original shell usually requires shaving a small amount of plastic from the internal screen frame so the larger glass sits flush. Pocket and Color shells are generally drop-in once you have the right kit. Always confirm the kit's listed model designation, DMG, MGB, or CGB, matches your console before ordering.</p>
+</main>
+</div></div>
+<footer class="site"><div class="shell"><a href="../index.html">&larr; Back to Hacks.Guide</a> &nbsp;&middot;&nbsp; Sources &amp; attribution in Credits.txt &nbsp;&middot;&nbsp; Copyright &copy; 2024 Nintendo Homebrew + Compiled and polished by Lexer Kindle</div></footer>
+</body>
+</html>

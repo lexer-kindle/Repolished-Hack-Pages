@@ -1,84 +1,77 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Xbox One Hacks Guide</title>
-    <meta name="description" content="No jailbreak exists; the only legitimate path to homebrew is Microsoft&#x27;s official Developer Mode for running UWP apps.">
-    <link rel="icon" href="../images/favicon.ico">
-    <style>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Xbox One Hacks Guide</title>
+<meta name="description" content="Xbox One Hacks Guide — Overview.">
+<link rel="icon" href="../images/favicon.ico">
+<style>
 :root{--bg:#fff;--bg-soft:#f6f6f7;--bg-card:#fff;--border:#e2e2e3;--text:#213547;--text-soft:#5c6b77;--brand:#3451b2;--accent1:#0e6f10;--accent2:#54bf26;--warn-bg:#fff6e6;--warn-bd:#e0a93c;--warn-tx:#7a5500;--ok-bg:#eef4ff;--ok-bd:#3a5ccc}
 @media (prefers-color-scheme:dark){:root{--bg:#1b1b1f;--bg-soft:#202127;--bg-card:#202127;--border:#2e2e32;--text:#dfdfd6;--text-soft:#98989f;--brand:#a8b1ff;--warn-bg:#2a2310;--warn-bd:#9a7b2e;--warn-tx:#e8c66a;--ok-bg:#16202e;--ok-bd:#3a5ccc}}
 *{box-sizing:border-box}
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
 a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
-.wrap{max-width:840px;margin:0 auto;padding:0 24px}
-header.site{border-bottom:1px solid var(--border);padding:14px 0}
-header.site .wrap{display:flex;align-items:center;gap:16px}
-header.site .brand{font-weight:700;font-size:18px;color:var(--text)}
-header.site nav{margin-left:auto;display:flex;gap:20px;font-size:14px}
+header.site{border-bottom:1px solid var(--border);padding:14px 0;position:sticky;top:0;background:var(--bg);z-index:5}
+header.site .bar{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:16px}
+header.site .brand{font-weight:700;font-size:17px;color:var(--text)}
+header.site nav{margin-left:auto;display:flex;gap:18px;font-size:14px}
 header.site nav a{color:var(--text-soft)}
-.hero{padding:46px 0 6px}
-.badge{display:inline-block;padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600;color:#fff;background:linear-gradient(120deg,var(--accent1),var(--accent2));margin-bottom:16px}
-.hero h1{font-size:40px;line-height:1.1;margin:0 0 12px}
-.hero p.lede{font-size:19px;color:var(--text-soft);margin:0}
-h2{font-size:23px;margin:38px 0 14px}
-p,li{font-size:16px}
-.callout{border:1px solid var(--ok-bd);background:var(--ok-bg);border-radius:12px;padding:18px 20px;margin:24px 0}
-.callout h2{margin:0 0 12px;font-size:19px}
-table.methods{width:100%;border-collapse:collapse;font-size:15px;margin-top:6px}
+.shell{max-width:1080px;margin:0 auto;padding:0 24px}
+.layout{display:flex;gap:34px;align-items:flex-start;padding:26px 0 10px}
+.sidebar{flex:0 0 216px;position:sticky;top:74px;font-size:14px}
+.sidebar .kick{font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--text-soft);margin:0 0 8px 10px}
+.sidebar a{display:block;padding:8px 11px;border-radius:8px;color:var(--text-soft);border-left:3px solid transparent}
+.sidebar a:hover{text-decoration:none;background:var(--bg-soft);color:var(--text)}
+.sidebar a.active{background:var(--ok-bg);border-left-color:var(--accent2);color:var(--text);font-weight:600}
+.sidebar .back{margin-bottom:12px}
+.content{flex:1;min-width:0;padding-bottom:30px}
+.content .badge{display:inline-block;padding:5px 13px;border-radius:999px;font-size:12px;font-weight:600;color:#fff;background:linear-gradient(120deg,var(--accent1),var(--accent2));margin-bottom:14px}
+.content h1{font-size:33px;line-height:1.15;margin:0 0 18px}
+.content h2{font-size:21px;margin:30px 0 12px}
+.content h3{font-size:16px;margin:20px 0 4px}
+.content p,.content li{font-size:15.5px}
+.callout{border:1px solid var(--ok-bd);background:var(--ok-bg);border-radius:12px;padding:16px 18px;margin:22px 0}
+.callout h2{margin:0 0 10px;font-size:17px}
+table.methods{width:100%;border-collapse:collapse;font-size:14.5px;margin:8px 0}
 table.methods th,table.methods td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top}
-table.methods th{color:var(--text-soft);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.4px}
+table.methods th{color:var(--text-soft);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.4px}
 .tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;margin-top:4px}
-.checkfirst{margin-top:16px}
-.warn{border:1px solid var(--warn-bd);background:var(--warn-bg);color:var(--warn-tx);border-radius:12px;padding:16px 20px;margin:24px 0;font-size:15px}
+.warn{border:1px solid var(--warn-bd);background:var(--warn-bg);color:var(--warn-tx);border-radius:12px;padding:15px 18px;margin:22px 0;font-size:14.5px}
 .warn strong{color:var(--warn-tx)}
 ol.phases{counter-reset:step;list-style:none;padding:0;margin:14px 0}
-ol.phases>li{position:relative;padding:14px 0 14px 52px;border-bottom:1px solid var(--border)}
-ol.phases>li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:12px;width:34px;height:34px;border-radius:50%;background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
-ol.phases>li .t{font-weight:600;font-size:16px}
-ol.phases>li .d{color:var(--text-soft);font-size:15px;margin-top:2px}
-footer.site{border-top:1px solid var(--border);margin-top:56px;padding:24px 0;text-align:center;color:var(--text-soft);font-size:13px}
+ol.phases>li{position:relative;padding:13px 0 13px 50px;border-bottom:1px solid var(--border)}
+ol.phases>li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:12px;width:32px;height:32px;border-radius:50%;background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+ol.phases>li .t{font-weight:600;font-size:15.5px}
+ol.phases>li .d{color:var(--text-soft);font-size:14.5px;margin-top:2px}
+footer.site{border-top:1px solid var(--border);margin-top:30px;padding:22px 0;text-align:center;color:var(--text-soft);font-size:13px}
+@media (max-width:760px){.layout{flex-direction:column;padding-top:16px}.sidebar{position:static;flex:none;width:100%}.sidebar a{display:inline-block}}
 </style>
-  </head>
-  <body>
-    <header class="site">
-      <div class="wrap"><span class="brand">Xbox One Hacks Guide</span><nav><a href="../index.html">Home</a></nav></div>
-    </header>
-    <main class="wrap">
-      <section class="hero">
-        <span class="badge">Xbox One</span>
-        <h1>Xbox One Hacks Guide</h1>
-        <p class="lede">No jailbreak exists; the only legitimate path to homebrew is Microsoft&#x27;s official Developer Mode for running UWP apps.</p>
-      </section>
-
-      <h2>What this is for</h2>
-      <p>The Xbox One has no public CFW, jailbreak, or kernel exploit, and the retail OS stays locked. Microsoft instead provides an official, supported Developer Mode that lets anyone sideload and run their own unsigned UWP (Universal Windows Platform) apps, including emulator ports like RetroArch, Dolphin, and PPSSPP. This is sandboxed homebrew with developer privileges, not a system jailbreak, so it cannot run pirated retail titles.</p>
-
-      <div class="callout">
-        <h2>&#9881;&#65039; Methods, versions &amp; compatibility &mdash; read this first</h2>
-        <table class="methods">
-          <tr><th>Method</th><th>Works on</th><th>Notes</th></tr>
-          <tr><td><strong>Developer Mode</strong><br><span class="tag">Official</span></td><td>All Xbox One / One S / One X (and Series S|X)</td><td>Official Microsoft feature; switches the console into a developer sandbox to sideload UWP apps. Reversible.</td></tr><tr><td><strong>Partner Center developer account</strong><br><span class="tag">Account</span></td><td>Required to activate Dev Mode</td><td>Historically a one-time ~$19 fee; individual developer onboarding is free as of June 2025. No subscription.</td></tr><tr><td><strong>RetroArch / Dolphin / PPSSPP (UWP)</strong><br><span class="tag">Homebrew</span></td><td>Runs inside Dev Mode</td><td>Emulator cores packaged as UWP apps; sideloaded via the Device Portal web interface over the network.</td></tr>
-        </table>
-        <p class="checkfirst"><strong>What to check first:</strong> There is NO jailbreak or custom firmware for Xbox One. Your only real option is Microsoft&#x27;s official Dev Mode, which you toggle between Retail and Developer modes. Note the limits: a 2 GB per-app size cap, sandboxed apps with limited filesystem access (you must enable external file access in RetroArch), and apps cannot write to their own install directory.</p>
-      </div>
-
-      <div class="warn"><strong>&#9888;&#65039; Before you start:</strong> Console modding carries real risk &mdash; an interrupted install or the wrong method/file for your exact model can leave hardware unbootable. Identify your model first, back up anything important, and proceed at your own risk.</div>
-
-      <h2>What you'll need</h2>
-      <ul><li>Xbox One console (any model) with a controller</li><li>A Microsoft account + Partner Center developer registration (free as of June 2025)</li><li>A Windows 10/11 PC on the same network for sideloading</li><li>The Dev Mode Activation app (free, from the Store)</li><li>USB or network access to transfer the .appx/.appxbundle packages</li><li>An internet connection</li></ul>
-
-      <h2>How it works &mdash; the process</h2>
-      <p>This walkthrough names the tools at each stage so you know what each one is and what it's for. Always use the latest release of each named tool.</p>
-      <ol class="phases"><li><div class="t">Register as a developer</div><div class="d">Create a Microsoft Partner Center individual developer account (free since June 2025) so the console can be flagged for Dev Mode.</div></li><li><div class="t">Activate Developer Mode</div><div class="d">Install and run the Dev Mode Activation app, enter the code, and reboot into the developer sandbox.</div></li><li><div class="t">Open the Device Portal</div><div class="d">Enable the web-based Device Portal and connect to the console&#x27;s IP from your PC&#x27;s browser.</div></li><li><div class="t">Sideload UWP homebrew</div><div class="d">Upload .appx/.appxbundle packages (RetroArch, Dolphin, PPSSPP) through the Device Portal and launch them.</div></li><li><div class="t">Configure apps &amp; storage</div><div class="d">Enable external file access, attach a USB drive for ROMs/BIOS, and work within the 2 GB size cap.</div></li><li><div class="t">Switch back when needed</div><div class="d">Use &#x27;Leave Developer Mode&#x27; to return to Retail mode for normal gaming.</div></li></ol>
-
-      <h2>Which option should I pick?</h2><p>If you only want emulators/homebrew, stay in Dev Mode. There is no way to run pirated retail games or bypass the retail OS - do not expect a jailbreak.</p>
-
-      <div class="warn" style="margin-top:34px"><strong>Disclaimer:</strong> This is an original guide written for Hacks.Guide, inspired by community documentation (see <em>Credits.txt</em>). Tools, firmware versions, and methods change over time &mdash; always get the latest official release of each named tool and follow its included instructions. Modding is done entirely at your own risk.</div>
-    </main>
-    <footer class="site">
-      <div class="wrap"><a href="../index.html">&larr; Back to Hacks.Guide</a> &nbsp;&middot;&nbsp; Sources &amp; attribution in Credits.txt &nbsp;&middot;&nbsp; Copyright &copy; 2024 Nintendo Homebrew + Compiled and polished by Lexer Kindle</div>
-    </footer>
-  </body>
+</head>
+<body>
+<header class="site"><div class="bar"><a class="brand" href="../index.html">Hacks.Guide</a><nav><a href="../index.html">Home</a><a href="../donations.html">Donations</a></nav></div></header>
+<div class="shell"><div class="layout">
+<aside class="sidebar"><div class="back"><a href="../index.html">&larr; All guides</a></div>
+<p class="kick">Xbox One</p>
+<a href="index.html" class="active">Overview</a>
+<a href="compatibility.html">Compatibility</a>
+<a href="requirements.html">What you&#x27;ll need</a>
+<a href="methods.html">Methods</a>
+<a href="installation.html">Installation</a>
+<a href="homebrew.html">Homebrew &amp; apps</a>
+<a href="troubleshooting.html">Troubleshooting</a>
+<a href="faq.html">FAQ</a>
+<a href="credits.html">Credits</a></aside>
+<main class="content">
+<span class="badge">Xbox One</span>
+<h1>Xbox One Hacks Guide</h1>
+<h2>Xbox One Homebrew: Setting Honest Expectations</h2>
+<p>Welcome to this hobbyist guide to running your own software on the Xbox One family of consoles. Before you begin, the most important thing to understand is this: there is no jailbreak for the Xbox One. There is no custom firmware, no kernel exploit, and no soft-modding scene like the ones you may have seen for older consoles. Microsoft's modern operating system has held up remarkably well, and nobody has publicly broken its security to gain unsigned code execution on the retail side.</p>
+<p>So what can you actually do? Quite a lot, as it turns out, and all of it is completely legitimate. Microsoft ships an official feature called <strong>Developer Mode</strong> on every retail Xbox One. It is the same toolchain that real studios use to test their games, and Microsoft has deliberately made it available to ordinary hobbyists. Once you activate it, you can sideload your own Universal Windows Platform (UWP) apps onto the console and run them in a sandboxed environment.</p>
+<p>This is the path that powers the community's favorite projects. Emulator ports like <strong>RetroArch</strong>, <strong>Dolphin</strong>, and <strong>PPSSPP</strong> have all been packaged as UWP apps, and they run on Developer Mode without any hacking whatsoever. You install them through a web-based Device Portal from your computer's browser.</p>
+<p>There are real limits. Apps are capped at 2 GB each, the filesystem is sandboxed, and you cannot run pirated retail games. But for retro emulation, hobby coding, and tinkering, Developer Mode is genuinely capable. The whole thing is also fully reversible. The rest of this guide walks you through requirements, account setup, installation, and troubleshooting in plain language.</p>
+</main>
+</div></div>
+<footer class="site"><div class="shell"><a href="../index.html">&larr; Back to Hacks.Guide</a> &nbsp;&middot;&nbsp; Sources &amp; attribution in Credits.txt &nbsp;&middot;&nbsp; Copyright &copy; 2024 Nintendo Homebrew + Compiled and polished by Lexer Kindle</div></footer>
+</body>
 </html>

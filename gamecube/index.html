@@ -1,84 +1,78 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>GameCube Hacks Guide</title>
-    <meta name="description" content="Run the all-in-one Swiss utility via a chosen entry point to load homebrew and backups from SD media.">
-    <link rel="icon" href="../images/favicon.ico">
-    <style>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GameCube Hacks Guide</title>
+<meta name="description" content="GameCube Hacks Guide — Overview.">
+<link rel="icon" href="../images/favicon.ico">
+<style>
 :root{--bg:#fff;--bg-soft:#f6f6f7;--bg-card:#fff;--border:#e2e2e3;--text:#213547;--text-soft:#5c6b77;--brand:#3451b2;--accent1:#b3000c;--accent2:#e60012;--warn-bg:#fff6e6;--warn-bd:#e0a93c;--warn-tx:#7a5500;--ok-bg:#eef4ff;--ok-bd:#3a5ccc}
 @media (prefers-color-scheme:dark){:root{--bg:#1b1b1f;--bg-soft:#202127;--bg-card:#202127;--border:#2e2e32;--text:#dfdfd6;--text-soft:#98989f;--brand:#a8b1ff;--warn-bg:#2a2310;--warn-bd:#9a7b2e;--warn-tx:#e8c66a;--ok-bg:#16202e;--ok-bd:#3a5ccc}}
 *{box-sizing:border-box}
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
 a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
-.wrap{max-width:840px;margin:0 auto;padding:0 24px}
-header.site{border-bottom:1px solid var(--border);padding:14px 0}
-header.site .wrap{display:flex;align-items:center;gap:16px}
-header.site .brand{font-weight:700;font-size:18px;color:var(--text)}
-header.site nav{margin-left:auto;display:flex;gap:20px;font-size:14px}
+header.site{border-bottom:1px solid var(--border);padding:14px 0;position:sticky;top:0;background:var(--bg);z-index:5}
+header.site .bar{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:16px}
+header.site .brand{font-weight:700;font-size:17px;color:var(--text)}
+header.site nav{margin-left:auto;display:flex;gap:18px;font-size:14px}
 header.site nav a{color:var(--text-soft)}
-.hero{padding:46px 0 6px}
-.badge{display:inline-block;padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600;color:#fff;background:linear-gradient(120deg,var(--accent1),var(--accent2));margin-bottom:16px}
-.hero h1{font-size:40px;line-height:1.1;margin:0 0 12px}
-.hero p.lede{font-size:19px;color:var(--text-soft);margin:0}
-h2{font-size:23px;margin:38px 0 14px}
-p,li{font-size:16px}
-.callout{border:1px solid var(--ok-bd);background:var(--ok-bg);border-radius:12px;padding:18px 20px;margin:24px 0}
-.callout h2{margin:0 0 12px;font-size:19px}
-table.methods{width:100%;border-collapse:collapse;font-size:15px;margin-top:6px}
+.shell{max-width:1080px;margin:0 auto;padding:0 24px}
+.layout{display:flex;gap:34px;align-items:flex-start;padding:26px 0 10px}
+.sidebar{flex:0 0 216px;position:sticky;top:74px;font-size:14px}
+.sidebar .kick{font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--text-soft);margin:0 0 8px 10px}
+.sidebar a{display:block;padding:8px 11px;border-radius:8px;color:var(--text-soft);border-left:3px solid transparent}
+.sidebar a:hover{text-decoration:none;background:var(--bg-soft);color:var(--text)}
+.sidebar a.active{background:var(--ok-bg);border-left-color:var(--accent2);color:var(--text);font-weight:600}
+.sidebar .back{margin-bottom:12px}
+.content{flex:1;min-width:0;padding-bottom:30px}
+.content .badge{display:inline-block;padding:5px 13px;border-radius:999px;font-size:12px;font-weight:600;color:#fff;background:linear-gradient(120deg,var(--accent1),var(--accent2));margin-bottom:14px}
+.content h1{font-size:33px;line-height:1.15;margin:0 0 18px}
+.content h2{font-size:21px;margin:30px 0 12px}
+.content h3{font-size:16px;margin:20px 0 4px}
+.content p,.content li{font-size:15.5px}
+.callout{border:1px solid var(--ok-bd);background:var(--ok-bg);border-radius:12px;padding:16px 18px;margin:22px 0}
+.callout h2{margin:0 0 10px;font-size:17px}
+table.methods{width:100%;border-collapse:collapse;font-size:14.5px;margin:8px 0}
 table.methods th,table.methods td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top}
-table.methods th{color:var(--text-soft);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.4px}
+table.methods th{color:var(--text-soft);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.4px}
 .tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;margin-top:4px}
-.checkfirst{margin-top:16px}
-.warn{border:1px solid var(--warn-bd);background:var(--warn-bg);color:var(--warn-tx);border-radius:12px;padding:16px 20px;margin:24px 0;font-size:15px}
+.warn{border:1px solid var(--warn-bd);background:var(--warn-bg);color:var(--warn-tx);border-radius:12px;padding:15px 18px;margin:22px 0;font-size:14.5px}
 .warn strong{color:var(--warn-tx)}
 ol.phases{counter-reset:step;list-style:none;padding:0;margin:14px 0}
-ol.phases>li{position:relative;padding:14px 0 14px 52px;border-bottom:1px solid var(--border)}
-ol.phases>li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:12px;width:34px;height:34px;border-radius:50%;background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
-ol.phases>li .t{font-weight:600;font-size:16px}
-ol.phases>li .d{color:var(--text-soft);font-size:15px;margin-top:2px}
-footer.site{border-top:1px solid var(--border);margin-top:56px;padding:24px 0;text-align:center;color:var(--text-soft);font-size:13px}
+ol.phases>li{position:relative;padding:13px 0 13px 50px;border-bottom:1px solid var(--border)}
+ol.phases>li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:12px;width:32px;height:32px;border-radius:50%;background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+ol.phases>li .t{font-weight:600;font-size:15.5px}
+ol.phases>li .d{color:var(--text-soft);font-size:14.5px;margin-top:2px}
+footer.site{border-top:1px solid var(--border);margin-top:30px;padding:22px 0;text-align:center;color:var(--text-soft);font-size:13px}
+@media (max-width:760px){.layout{flex-direction:column;padding-top:16px}.sidebar{position:static;flex:none;width:100%}.sidebar a{display:inline-block}}
 </style>
-  </head>
-  <body>
-    <header class="site">
-      <div class="wrap"><span class="brand">GameCube Hacks Guide</span><nav><a href="../index.html">Home</a></nav></div>
-    </header>
-    <main class="wrap">
-      <section class="hero">
-        <span class="badge">GameCube</span>
-        <h1>GameCube Hacks Guide</h1>
-        <p class="lede">Run the all-in-one Swiss utility via a chosen entry point to load homebrew and backups from SD media.</p>
-      </section>
-
-      <h2>What this is for</h2>
-      <p>GameCube homebrew centers on Swiss, an all-in-one open-source utility that loads homebrew, plays backups, and patches discs from SD cards or ODE devices. Because there&#x27;s no online OS to exploit, you get Swiss running through an entry point - a save-game exploit, an SD adapter, a boot disc, or a PicoBoot modchip - then browse and run files from FAT32 SD media.</p>
-
-      <div class="callout">
-        <h2>&#9881;&#65039; Methods, versions &amp; compatibility &mdash; read this first</h2>
-        <table class="methods">
-          <tr><th>Method</th><th>Works on</th><th>Notes</th></tr>
-          <tr><td><strong>Game-save exploit</strong><br><span class="tag">Exploit</span></td><td>All DOL-001/DOL-101 with a compatible game</td><td>A hacked save on a memory card boots Swiss with no hardware mod; needs a specific supported game disc.</td></tr><tr><td><strong>SD2SP2 + Swiss</strong><br><span class="tag">Hardware</span></td><td>Models with Serial Port 2 (most DOL-001/DOL-101)</td><td>MicroSD adapter in the Serial Port 2 slot; cheap and reliable. Still needs an entry point to first launch Swiss.</td></tr><tr><td><strong>SD Gecko / SD Media Launcher</strong><br><span class="tag">Boot-disc</span></td><td>All models (Memory Card Slot B)</td><td>SD adapter in a memory-card slot; the Datel SD Media Launcher includes a boot disc, so no exploit needed.</td></tr><tr><td><strong>PicoBoot</strong><br><span class="tag">Modchip</span></td><td>All DOL-001/DOL-101 (requires soldering)</td><td>A ~$4 Raspberry Pi Pico flashed and wired with ~5 wires; replaces the IPL so Swiss auto-boots at power-on.</td></tr><tr><td><strong>ODE (e.g. GCLoader)</strong><br><span class="tag">Boot-disc</span></td><td>All models</td><td>Replaces the disc drive to autoboot a Swiss ISO; a burned boot disc only works on consoles that read DVD-Rs.</td></tr>
-        </table>
-        <p class="checkfirst"><strong>What to check first:</strong> The GameCube has no system firmware; the key thing to check is your MODEL and ports. DOL-001 has the high-speed Serial Port 2 (for SD2SP2) and digital AV out; DOL-101 lacks digital video out, and a few DOL-001 rev 1.1 boards have no physical SP2 port. Format all SD media as FAT32 with Swiss and your files before starting.</p>
-      </div>
-
-      <div class="warn"><strong>&#9888;&#65039; Before you start:</strong> Console modding carries real risk &mdash; an interrupted install or the wrong method/file for your exact model can leave hardware unbootable. Identify your model first, back up anything important, and proceed at your own risk.</div>
-
-      <h2>What you'll need</h2>
-      <ul><li>GameCube console (DOL-001 or DOL-101) + controller</li><li>Latest Swiss release (swiss.dol) on FAT32 SD/microSD</li><li>A chosen entry point: SD2SP2, SD Gecko/SD Media Launcher, save exploit, PicoBoot, or ODE</li><li>A memory card (for the save-exploit method)</li><li>Soldering tools (only for PicoBoot or internal SD2SP2 installs)</li><li>A PC with an SD card reader</li></ul>
-
-      <h2>How it works &mdash; the process</h2>
-      <p>This walkthrough names the tools at each stage so you know what each one is and what it's for. Always use the latest release of each named tool.</p>
-      <ol class="phases"><li><div class="t">Identify your model &amp; ports</div><div class="d">Check whether you have a DOL-001 (Serial Port 2 present) or DOL-101, and confirm an SP2 port exists if using SD2SP2.</div></li><li><div class="t">Prepare SD media</div><div class="d">Format an SD card to FAT32 and copy the latest Swiss build (swiss.dol) plus your homebrew and ISOs.</div></li><li><div class="t">Choose an entry point</div><div class="d">Pick how Swiss first launches: a save exploit, the SD Media Launcher boot disc, an ODE, or a PicoBoot modchip.</div></li><li><div class="t">Install hardware (if needed)</div><div class="d">Fit an SD2SP2 in Serial Port 2; or flash a Pi Pico and solder ~5 wires for PicoBoot; or replace the drive for an ODE.</div></li><li><div class="t">Boot Swiss</div><div class="d">Launch Swiss through your entry point, then switch the device to your SD card and browse your files.</div></li><li><div class="t">Run homebrew &amp; backups</div><div class="d">From Swiss, launch .dol/.elf homebrew or boot game ISOs with the right patch/boot settings.</div></li></ol>
-
-      <h2>Which option should I pick?</h2><p>Cheapest no-solder route: a save exploit plus an SD Gecko/SD2SP2 for storage. Cleanest permanent route: PicoBoot, which auto-loads Swiss at power-on but requires soldering.</p>
-
-      <div class="warn" style="margin-top:34px"><strong>Disclaimer:</strong> This is an original guide written for Hacks.Guide, inspired by community documentation (see <em>Credits.txt</em>). Tools, firmware versions, and methods change over time &mdash; always get the latest official release of each named tool and follow its included instructions. Modding is done entirely at your own risk.</div>
-    </main>
-    <footer class="site">
-      <div class="wrap"><a href="../index.html">&larr; Back to Hacks.Guide</a> &nbsp;&middot;&nbsp; Sources &amp; attribution in Credits.txt &nbsp;&middot;&nbsp; Copyright &copy; 2024 Nintendo Homebrew + Compiled and polished by Lexer Kindle</div>
-    </footer>
-  </body>
+</head>
+<body>
+<header class="site"><div class="bar"><a class="brand" href="../index.html">Hacks.Guide</a><nav><a href="../index.html">Home</a><a href="../donations.html">Donations</a></nav></div></header>
+<div class="shell"><div class="layout">
+<aside class="sidebar"><div class="back"><a href="../index.html">&larr; All guides</a></div>
+<p class="kick">GameCube</p>
+<a href="index.html" class="active">Overview</a>
+<a href="compatibility.html">Compatibility</a>
+<a href="requirements.html">What you&#x27;ll need</a>
+<a href="methods.html">Methods</a>
+<a href="installation.html">Installation</a>
+<a href="homebrew.html">Homebrew &amp; apps</a>
+<a href="troubleshooting.html">Troubleshooting</a>
+<a href="faq.html">FAQ</a>
+<a href="credits.html">Credits</a></aside>
+<main class="content">
+<span class="badge">GameCube</span>
+<h1>GameCube Hacks Guide</h1>
+<h2>GameCube Homebrew Overview</h2>
+<p>Despite launching back in 2001, the Nintendo GameCube remains a favorite for tinkerers, retro gamers, and homebrew enthusiasts. Unlike modern consoles, the GameCube has <strong>no system firmware</strong> and no online account system to worry about, which keeps the homebrew scene refreshingly straightforward. There is nothing to update, nothing to brick on a software level, and no risk of being banned. Once you can run code, the console is yours to explore.</p>
+<p>The heart of GameCube homebrew is <strong>Swiss</strong>, a free, open-source, all-in-one loader. Swiss can launch homebrew programs in <em>.dol</em> and <em>.elf</em> formats, browse files on a FAT32 SD card, and load game backups (ISOs) directly from SD-based or USB-based storage. Think of it as the central hub: nearly everything you will want to do passes through Swiss in some way.</p>
+<p>To get Swiss running, you need an <strong>entry point</strong> — a way to inject homebrew into a console that was never designed to run it. Options range from a purely software-based hacked game save, to inexpensive flash-cart adapters, to a soldered modchip called PicoBoot that auto-launches Swiss at power-on. We cover each method in detail later in this guide.</p>
+<p>What can you actually do? Plenty. You can run emulators for older systems, play fan-made homebrew games, use save managers like GCMM, and back up your own discs and memory cards for safekeeping. With Swiss you can also boot those backups from SD or an optical drive emulator (ODE), eliminating disc wear and long load times.</p>
+<p>This guide walks you through console compatibility, what you will need, the available entry points, the full installation process, and troubleshooting. Read the compatibility page first — your console model (DOL-001 vs DOL-101) and its ports determine which methods are open to you.</p>
+</main>
+</div></div>
+<footer class="site"><div class="shell"><a href="../index.html">&larr; Back to Hacks.Guide</a> &nbsp;&middot;&nbsp; Sources &amp; attribution in Credits.txt &nbsp;&middot;&nbsp; Copyright &copy; 2024 Nintendo Homebrew + Compiled and polished by Lexer Kindle</div></footer>
+</body>
 </html>

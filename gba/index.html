@@ -1,84 +1,78 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Game Boy Advance Hacks Guide</title>
-    <meta name="description" content="Play your game library off an SD card and bring dim original screens up to modern backlit clarity.">
-    <link rel="icon" href="../images/favicon.ico">
-    <style>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Game Boy Advance Hacks Guide</title>
+<meta name="description" content="Game Boy Advance Hacks Guide — Overview.">
+<link rel="icon" href="../images/favicon.ico">
+<style>
 :root{--bg:#fff;--bg-soft:#f6f6f7;--bg-card:#fff;--border:#e2e2e3;--text:#213547;--text-soft:#5c6b77;--brand:#3451b2;--accent1:#b3000c;--accent2:#e60012;--warn-bg:#fff6e6;--warn-bd:#e0a93c;--warn-tx:#7a5500;--ok-bg:#eef4ff;--ok-bd:#3a5ccc}
 @media (prefers-color-scheme:dark){:root{--bg:#1b1b1f;--bg-soft:#202127;--bg-card:#202127;--border:#2e2e32;--text:#dfdfd6;--text-soft:#98989f;--brand:#a8b1ff;--warn-bg:#2a2310;--warn-bd:#9a7b2e;--warn-tx:#e8c66a;--ok-bg:#16202e;--ok-bd:#3a5ccc}}
 *{box-sizing:border-box}
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
 a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
-.wrap{max-width:840px;margin:0 auto;padding:0 24px}
-header.site{border-bottom:1px solid var(--border);padding:14px 0}
-header.site .wrap{display:flex;align-items:center;gap:16px}
-header.site .brand{font-weight:700;font-size:18px;color:var(--text)}
-header.site nav{margin-left:auto;display:flex;gap:20px;font-size:14px}
+header.site{border-bottom:1px solid var(--border);padding:14px 0;position:sticky;top:0;background:var(--bg);z-index:5}
+header.site .bar{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:16px}
+header.site .brand{font-weight:700;font-size:17px;color:var(--text)}
+header.site nav{margin-left:auto;display:flex;gap:18px;font-size:14px}
 header.site nav a{color:var(--text-soft)}
-.hero{padding:46px 0 6px}
-.badge{display:inline-block;padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600;color:#fff;background:linear-gradient(120deg,var(--accent1),var(--accent2));margin-bottom:16px}
-.hero h1{font-size:40px;line-height:1.1;margin:0 0 12px}
-.hero p.lede{font-size:19px;color:var(--text-soft);margin:0}
-h2{font-size:23px;margin:38px 0 14px}
-p,li{font-size:16px}
-.callout{border:1px solid var(--ok-bd);background:var(--ok-bg);border-radius:12px;padding:18px 20px;margin:24px 0}
-.callout h2{margin:0 0 12px;font-size:19px}
-table.methods{width:100%;border-collapse:collapse;font-size:15px;margin-top:6px}
+.shell{max-width:1080px;margin:0 auto;padding:0 24px}
+.layout{display:flex;gap:34px;align-items:flex-start;padding:26px 0 10px}
+.sidebar{flex:0 0 216px;position:sticky;top:74px;font-size:14px}
+.sidebar .kick{font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--text-soft);margin:0 0 8px 10px}
+.sidebar a{display:block;padding:8px 11px;border-radius:8px;color:var(--text-soft);border-left:3px solid transparent}
+.sidebar a:hover{text-decoration:none;background:var(--bg-soft);color:var(--text)}
+.sidebar a.active{background:var(--ok-bg);border-left-color:var(--accent2);color:var(--text);font-weight:600}
+.sidebar .back{margin-bottom:12px}
+.content{flex:1;min-width:0;padding-bottom:30px}
+.content .badge{display:inline-block;padding:5px 13px;border-radius:999px;font-size:12px;font-weight:600;color:#fff;background:linear-gradient(120deg,var(--accent1),var(--accent2));margin-bottom:14px}
+.content h1{font-size:33px;line-height:1.15;margin:0 0 18px}
+.content h2{font-size:21px;margin:30px 0 12px}
+.content h3{font-size:16px;margin:20px 0 4px}
+.content p,.content li{font-size:15.5px}
+.callout{border:1px solid var(--ok-bd);background:var(--ok-bg);border-radius:12px;padding:16px 18px;margin:22px 0}
+.callout h2{margin:0 0 10px;font-size:17px}
+table.methods{width:100%;border-collapse:collapse;font-size:14.5px;margin:8px 0}
 table.methods th,table.methods td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top}
-table.methods th{color:var(--text-soft);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.4px}
+table.methods th{color:var(--text-soft);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.4px}
 .tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;margin-top:4px}
-.checkfirst{margin-top:16px}
-.warn{border:1px solid var(--warn-bd);background:var(--warn-bg);color:var(--warn-tx);border-radius:12px;padding:16px 20px;margin:24px 0;font-size:15px}
+.warn{border:1px solid var(--warn-bd);background:var(--warn-bg);color:var(--warn-tx);border-radius:12px;padding:15px 18px;margin:22px 0;font-size:14.5px}
 .warn strong{color:var(--warn-tx)}
 ol.phases{counter-reset:step;list-style:none;padding:0;margin:14px 0}
-ol.phases>li{position:relative;padding:14px 0 14px 52px;border-bottom:1px solid var(--border)}
-ol.phases>li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:12px;width:34px;height:34px;border-radius:50%;background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
-ol.phases>li .t{font-weight:600;font-size:16px}
-ol.phases>li .d{color:var(--text-soft);font-size:15px;margin-top:2px}
-footer.site{border-top:1px solid var(--border);margin-top:56px;padding:24px 0;text-align:center;color:var(--text-soft);font-size:13px}
+ol.phases>li{position:relative;padding:13px 0 13px 50px;border-bottom:1px solid var(--border)}
+ol.phases>li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:12px;width:32px;height:32px;border-radius:50%;background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+ol.phases>li .t{font-weight:600;font-size:15.5px}
+ol.phases>li .d{color:var(--text-soft);font-size:14.5px;margin-top:2px}
+footer.site{border-top:1px solid var(--border);margin-top:30px;padding:22px 0;text-align:center;color:var(--text-soft);font-size:13px}
+@media (max-width:760px){.layout{flex-direction:column;padding-top:16px}.sidebar{position:static;flex:none;width:100%}.sidebar a{display:inline-block}}
 </style>
-  </head>
-  <body>
-    <header class="site">
-      <div class="wrap"><span class="brand">Game Boy Advance Hacks Guide</span><nav><a href="../index.html">Home</a></nav></div>
-    </header>
-    <main class="wrap">
-      <section class="hero">
-        <span class="badge">Game Boy Advance</span>
-        <h1>Game Boy Advance Hacks Guide</h1>
-        <p class="lede">Play your game library off an SD card and bring dim original screens up to modern backlit clarity.</p>
-      </section>
-
-      <h2>What this is for</h2>
-      <p>The GBA has no software exploits to bother with; modding centers on flash carts that load ROMs from SD, plus optional screen upgrades. The original AGB-001 and front-lit AGS-001 have hard-to-see displays, so backlit IPS LCD kits are the most popular hardware mod. Everything is cartridge- or hardware-based, with no firmware to flash.</p>
-
-      <div class="callout">
-        <h2>&#9881;&#65039; Methods, versions &amp; compatibility &mdash; read this first</h2>
-        <table class="methods">
-          <tr><th>Method</th><th>Works on</th><th>Notes</th></tr>
-          <tr><td><strong>EZ-Flash Omega / Omega DE</strong><br><span class="tag">Flashcart</span></td><td>Any GBA-slot device (GBA, SP, Micro, DS/DS Lite slot-2)</td><td>Most popular cart; the Definitive Edition adds FRAM saves, rumble, and runs the large 64MB GBA Video titles.</td></tr><tr><td><strong>EverDrive GBA (X5 / Mini)</strong><br><span class="tag">Flashcart</span></td><td>Any GBA-slot device</td><td>Premium FPGA-based cart from krikzz with strong save reliability and accuracy.</td></tr><tr><td><strong>IPS / backlight LCD kit</strong><br><span class="tag">Video</span></td><td>AGB-001 (original GBA) and AGS-001 (front-lit SP)</td><td>Drops a bright laminated IPS panel into a dim console; SP installs need shell trimming.</td></tr><tr><td><strong>AGS-101 screen transplant</strong><br><span class="tag">Video</span></td><td>AGS-001 SP</td><td>Swaps a genuine AGS-101 backlit panel into an older front-lit SP - a period-correct alternative to aftermarket IPS.</td></tr><tr><td><strong>EZ-Flash 3-in-1</strong><br><span class="tag">Flashcart</span></td><td>DS / DS Lite playing GBA games</td><td>Slot-2 pack paired with a slot-1 card to run GBA ROMs on a DS; has no SD slot of its own.</td></tr>
-        </table>
-        <p class="checkfirst"><strong>What to check first:</strong> Identify your model first: AGB-001 is the original GBA, AGS-001 the front-lit SP, and AGS-101 the factory backlit SP. Screen-mod kits and shell trimming differ per model, and the AGS-101 already has a good screen so it needs no upgrade. The console has no internal firmware to update.</p>
-      </div>
-
-      <div class="warn"><strong>&#9888;&#65039; Before you start:</strong> Console modding carries real risk &mdash; an interrupted install or the wrong method/file for your exact model can leave hardware unbootable. Identify your model first, back up anything important, and proceed at your own risk.</div>
-
-      <h2>What you'll need</h2>
-      <ul><li>A GBA, GBA SP (AGS-001/101), or GBA Micro</li><li>A flash cart (EZ-Flash Omega DE or EverDrive GBA) plus a microSD card</li><li>Legally-obtained GBA ROM/save files</li><li>For screen mods: an IPS/backlight kit matched to your exact model</li><li>A tri-wing (Y) and Phillips screwdriver to open the shell</li><li>Soldering iron and basic skill for backlight installs</li></ul>
-
-      <h2>How it works &mdash; the process</h2>
-      <p>This walkthrough names the tools at each stage so you know what each one is and what it's for. Always use the latest release of each named tool.</p>
-      <ol class="phases"><li><div class="t">Identify your model</div><div class="d">Confirm AGB-001, AGS-001, or AGS-101 so you order the correct screen kit and know whether a backlight mod is even needed.</div></li><li><div class="t">Set up a flash cart</div><div class="d">Format a microSD card, copy ROMs and the loader for an EZ-Flash Omega DE or EverDrive GBA, then boot and play.</div></li><li><div class="t">Plan the screen upgrade</div><div class="d">For dim AGB-001/AGS-001 units, buy an IPS/backlight kit plus, ideally, a pre-trimmed replacement shell.</div></li><li><div class="t">Install the LCD</div><div class="d">Open the shell, swap in the IPS panel and ribbon, solder the brightness wire, and trim the shell as required for SP kits.</div></li><li><div class="t">Reassemble and test</div><div class="d">Reseat the board and battery, close the shell, and verify image quality, brightness control, and no screen tearing.</div></li></ol>
-
-      <h2>Which option should I pick?</h2><p>If you just want to play games, get an EZ-Flash Omega Definitive Edition or EverDrive GBA. If your screen is hard to see, add a backlit IPS kit (AGB-001/AGS-001 only); AGS-101 owners already have a good screen.</p>
-
-      <div class="warn" style="margin-top:34px"><strong>Disclaimer:</strong> This is an original guide written for Hacks.Guide, inspired by community documentation (see <em>Credits.txt</em>). Tools, firmware versions, and methods change over time &mdash; always get the latest official release of each named tool and follow its included instructions. Modding is done entirely at your own risk.</div>
-    </main>
-    <footer class="site">
-      <div class="wrap"><a href="../index.html">&larr; Back to Hacks.Guide</a> &nbsp;&middot;&nbsp; Sources &amp; attribution in Credits.txt &nbsp;&middot;&nbsp; Copyright &copy; 2024 Nintendo Homebrew + Compiled and polished by Lexer Kindle</div>
-    </footer>
-  </body>
+</head>
+<body>
+<header class="site"><div class="bar"><a class="brand" href="../index.html">Hacks.Guide</a><nav><a href="../index.html">Home</a><a href="../donations.html">Donations</a></nav></div></header>
+<div class="shell"><div class="layout">
+<aside class="sidebar"><div class="back"><a href="../index.html">&larr; All guides</a></div>
+<p class="kick">Game Boy Advance</p>
+<a href="index.html" class="active">Overview</a>
+<a href="compatibility.html">Compatibility</a>
+<a href="requirements.html">What you&#x27;ll need</a>
+<a href="methods.html">Methods</a>
+<a href="installation.html">Installation</a>
+<a href="homebrew.html">Homebrew &amp; apps</a>
+<a href="troubleshooting.html">Troubleshooting</a>
+<a href="faq.html">FAQ</a>
+<a href="credits.html">Credits</a></aside>
+<main class="content">
+<span class="badge">Game Boy Advance</span>
+<h1>Game Boy Advance Hacks Guide</h1>
+<h2>Game Boy Advance: Flashcarts and Screen Upgrades</h2>
+<p>The Game Boy Advance is one of the most rewarding handhelds to modify because there is no firmware to hack and no console-level security to defeat. Everything you load runs straight from a flashcart, and the hardware improvements are physical rather than software. That makes the GBA a friendly first project: you decide how far you want to go, and nothing is locked behind a risky software exploit.</p>
+<p>There are really two halves to GBA modding. The first is <strong>software delivery</strong>, which means picking a flashcart that lets you run your own backups and homebrew from a single microSD card. The standout choice today is the <strong>EZ-Flash Omega</strong> family. The <strong>Omega Definitive Edition</strong> improves on the original by adding fast FRAM saves, built-in rumble, and enough storage to run the large 64MB GBA Video titles. If you want premium FPGA accuracy and cycle-faithful behavior, the <strong>EverDrive GBA</strong> is the enthusiast alternative.</p>
+<p>The second half is <strong>display quality</strong>, and this is where the model you own matters enormously. The original <strong>AGB-001</strong> has a dim, reflective screen that is genuinely hard to use without strong lighting. The <strong>AGS-001</strong> Game Boy Advance SP added a front light, which helped but still looks muddy by modern standards. The <strong>AGS-101</strong> SP shipped with a proper backlit panel and already looks excellent out of the box.</p>
+<p>For the AGB-001 and AGS-001, modern <strong>IPS and backlight LCD kits</strong> from makers like FunnyPlaying transform the experience. Another well-loved route is transplanting a genuine AGS-101 panel into an SP shell. Throughout this guide we will keep flagging which path applies to your specific model, so you never buy the wrong part.</p>
+<p>If you also own a DS or DS Lite, you are not left out: the <strong>EZ-Flash 3-in-1</strong> slot-2 pack runs GBA games on those systems when paired with a slot-1 card. The pages ahead cover compatibility, parts, methods, installation, homebrew, and troubleshooting in detail.</p>
+</main>
+</div></div>
+<footer class="site"><div class="shell"><a href="../index.html">&larr; Back to Hacks.Guide</a> &nbsp;&middot;&nbsp; Sources &amp; attribution in Credits.txt &nbsp;&middot;&nbsp; Copyright &copy; 2024 Nintendo Homebrew + Compiled and polished by Lexer Kindle</div></footer>
+</body>
 </html>

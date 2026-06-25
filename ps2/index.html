@@ -1,84 +1,82 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>PlayStation 2 Hacks Guide</title>
-    <meta name="description" content="Softmod the memory card or DVD drive to launch homebrew, load games disc-free from USB/SD/HDD, run emulators, and go region-free.">
-    <link rel="icon" href="../images/favicon.ico">
-    <style>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PlayStation 2 Hacks Guide</title>
+<meta name="description" content="PlayStation 2 Hacks Guide — Overview.">
+<link rel="icon" href="../images/favicon.ico">
+<style>
 :root{--bg:#fff;--bg-soft:#f6f6f7;--bg-card:#fff;--border:#e2e2e3;--text:#213547;--text-soft:#5c6b77;--brand:#3451b2;--accent1:#0a2a72;--accent2:#1565d8;--warn-bg:#fff6e6;--warn-bd:#e0a93c;--warn-tx:#7a5500;--ok-bg:#eef4ff;--ok-bd:#3a5ccc}
 @media (prefers-color-scheme:dark){:root{--bg:#1b1b1f;--bg-soft:#202127;--bg-card:#202127;--border:#2e2e32;--text:#dfdfd6;--text-soft:#98989f;--brand:#a8b1ff;--warn-bg:#2a2310;--warn-bd:#9a7b2e;--warn-tx:#e8c66a;--ok-bg:#16202e;--ok-bd:#3a5ccc}}
 *{box-sizing:border-box}
 body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
 a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
-.wrap{max-width:840px;margin:0 auto;padding:0 24px}
-header.site{border-bottom:1px solid var(--border);padding:14px 0}
-header.site .wrap{display:flex;align-items:center;gap:16px}
-header.site .brand{font-weight:700;font-size:18px;color:var(--text)}
-header.site nav{margin-left:auto;display:flex;gap:20px;font-size:14px}
+header.site{border-bottom:1px solid var(--border);padding:14px 0;position:sticky;top:0;background:var(--bg);z-index:5}
+header.site .bar{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:16px}
+header.site .brand{font-weight:700;font-size:17px;color:var(--text)}
+header.site nav{margin-left:auto;display:flex;gap:18px;font-size:14px}
 header.site nav a{color:var(--text-soft)}
-.hero{padding:46px 0 6px}
-.badge{display:inline-block;padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600;color:#fff;background:linear-gradient(120deg,var(--accent1),var(--accent2));margin-bottom:16px}
-.hero h1{font-size:40px;line-height:1.1;margin:0 0 12px}
-.hero p.lede{font-size:19px;color:var(--text-soft);margin:0}
-h2{font-size:23px;margin:38px 0 14px}
-p,li{font-size:16px}
-.callout{border:1px solid var(--ok-bd);background:var(--ok-bg);border-radius:12px;padding:18px 20px;margin:24px 0}
-.callout h2{margin:0 0 12px;font-size:19px}
-table.methods{width:100%;border-collapse:collapse;font-size:15px;margin-top:6px}
+.shell{max-width:1080px;margin:0 auto;padding:0 24px}
+.layout{display:flex;gap:34px;align-items:flex-start;padding:26px 0 10px}
+.sidebar{flex:0 0 216px;position:sticky;top:74px;font-size:14px}
+.sidebar .kick{font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--text-soft);margin:0 0 8px 10px}
+.sidebar a{display:block;padding:8px 11px;border-radius:8px;color:var(--text-soft);border-left:3px solid transparent}
+.sidebar a:hover{text-decoration:none;background:var(--bg-soft);color:var(--text)}
+.sidebar a.active{background:var(--ok-bg);border-left-color:var(--accent2);color:var(--text);font-weight:600}
+.sidebar .back{margin-bottom:12px}
+.content{flex:1;min-width:0;padding-bottom:30px}
+.content .badge{display:inline-block;padding:5px 13px;border-radius:999px;font-size:12px;font-weight:600;color:#fff;background:linear-gradient(120deg,var(--accent1),var(--accent2));margin-bottom:14px}
+.content h1{font-size:33px;line-height:1.15;margin:0 0 18px}
+.content h2{font-size:21px;margin:30px 0 12px}
+.content h3{font-size:16px;margin:20px 0 4px}
+.content p,.content li{font-size:15.5px}
+.callout{border:1px solid var(--ok-bd);background:var(--ok-bg);border-radius:12px;padding:16px 18px;margin:22px 0}
+.callout h2{margin:0 0 10px;font-size:17px}
+table.methods{width:100%;border-collapse:collapse;font-size:14.5px;margin:8px 0}
 table.methods th,table.methods td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top}
-table.methods th{color:var(--text-soft);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.4px}
+table.methods th{color:var(--text-soft);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.4px}
 .tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;margin-top:4px}
-.checkfirst{margin-top:16px}
-.warn{border:1px solid var(--warn-bd);background:var(--warn-bg);color:var(--warn-tx);border-radius:12px;padding:16px 20px;margin:24px 0;font-size:15px}
+.warn{border:1px solid var(--warn-bd);background:var(--warn-bg);color:var(--warn-tx);border-radius:12px;padding:15px 18px;margin:22px 0;font-size:14.5px}
 .warn strong{color:var(--warn-tx)}
 ol.phases{counter-reset:step;list-style:none;padding:0;margin:14px 0}
-ol.phases>li{position:relative;padding:14px 0 14px 52px;border-bottom:1px solid var(--border)}
-ol.phases>li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:12px;width:34px;height:34px;border-radius:50%;background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
-ol.phases>li .t{font-weight:600;font-size:16px}
-ol.phases>li .d{color:var(--text-soft);font-size:15px;margin-top:2px}
-footer.site{border-top:1px solid var(--border);margin-top:56px;padding:24px 0;text-align:center;color:var(--text-soft);font-size:13px}
+ol.phases>li{position:relative;padding:13px 0 13px 50px;border-bottom:1px solid var(--border)}
+ol.phases>li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:12px;width:32px;height:32px;border-radius:50%;background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+ol.phases>li .t{font-weight:600;font-size:15.5px}
+ol.phases>li .d{color:var(--text-soft);font-size:14.5px;margin-top:2px}
+footer.site{border-top:1px solid var(--border);margin-top:30px;padding:22px 0;text-align:center;color:var(--text-soft);font-size:13px}
+@media (max-width:760px){.layout{flex-direction:column;padding-top:16px}.sidebar{position:static;flex:none;width:100%}.sidebar a{display:inline-block}}
 </style>
-  </head>
-  <body>
-    <header class="site">
-      <div class="wrap"><span class="brand">PlayStation 2 Hacks Guide</span><nav><a href="../index.html">Home</a></nav></div>
-    </header>
-    <main class="wrap">
-      <section class="hero">
-        <span class="badge">PlayStation 2</span>
-        <h1>PlayStation 2 Hacks Guide</h1>
-        <p class="lede">Softmod the memory card or DVD drive to launch homebrew, load games disc-free from USB/SD/HDD, run emulators, and go region-free.</p>
-      </section>
+</head>
+<body>
+<header class="site"><div class="bar"><a class="brand" href="../index.html">Hacks.Guide</a><nav><a href="../index.html">Home</a><a href="../donations.html">Donations</a></nav></div></header>
+<div class="shell"><div class="layout">
+<aside class="sidebar"><div class="back"><a href="../index.html">&larr; All guides</a></div>
+<p class="kick">PlayStation 2</p>
+<a href="index.html" class="active">Overview</a>
+<a href="compatibility.html">Compatibility</a>
+<a href="requirements.html">What you&#x27;ll need</a>
+<a href="methods.html">Methods</a>
+<a href="installation.html">Installation</a>
+<a href="homebrew.html">Homebrew &amp; apps</a>
+<a href="troubleshooting.html">Troubleshooting</a>
+<a href="faq.html">FAQ</a>
+<a href="credits.html">Credits</a></aside>
+<main class="content">
+<span class="badge">PlayStation 2</span>
+<h1>PlayStation 2 Hacks Guide</h1>
+<h2>PlayStation 2 Homebrew Overview</h2>
+<p>The PlayStation 2 is one of the most enduring consoles ever made, and decades after its release the homebrew community has made it remarkably easy to unlock. Modding a PS2 means running unsigned software that Sony never authorized, all without opening the console or soldering anything. The entire process is a <strong>softmod</strong>: it lives on a memory card or a burned disc, so it is fully reversible and leaves no permanent marks on the hardware.</p>
 
-      <h2>What this is for</h2>
-      <p>PS2 homebrew turns the console into a flexible retro machine: it boots a custom interface from a memory card or disc that launches apps, emulators, and game loaders. With Open PS2 Loader you can run game backups from USB, SD (MX4SIO), an internal HDD, or the network, sparing the aging optical drive. MechaPwn additionally unlocks region-free operation.</p>
+<p>So what does a modded PS2 actually let you do? The headline feature for most people is <strong>disc-free game loading</strong>. Instead of swapping scratched DVDs, you can store your game backups on a USB drive, an SD card mounted through an <strong>MX4SIO</strong> adapter, an internal hard drive, or a network share, and launch them through <strong>Open PS2 Loader (OPL)</strong>. This is gentler on your aging optical drive and far more convenient for large collections.</p>
 
-      <div class="callout">
-        <h2>&#9881;&#65039; Methods, versions &amp; compatibility &mdash; read this first</h2>
-        <table class="methods">
-          <tr><th>Method</th><th>Works on</th><th>Notes</th></tr>
-          <tr><td><strong>FreeMcBoot (FMCB)</strong><br><span class="tag">Softmod</span></td><td>Most fat and slim models; NOT boot ROM 2.30 or 2.50 (most R-chassis SCPH-9xxxx slims and PS2 TV)</td><td>Memory-card exploit that auto-boots homebrew. Easiest as a pre-loaded card; ships with wLaunchELF.</td></tr><tr><td><strong>FreeDVDBoot</strong><br><span class="tag">Exploit</span></td><td>All slim consoles and many (not all) fats</td><td>DVD-player exploit - just burn a DVD-R. Auto-launches uLaunchELF so you can install a permanent exploit.</td></tr><tr><td><strong>PS2BBL / OpenTuna</strong><br><span class="tag">Softmod</span></td><td>Broad coverage, including units where classic FMCB is harder</td><td>Alternative persistent memory-card boot environments; commonly installed via FreeDVDBoot.</td></tr><tr><td><strong>Open PS2 Loader (OPL)</strong><br><span class="tag">Loader</span></td><td>All softmodded PS2 (and PS3 in PS2 mode)</td><td>Open-source loader; supports USB, MX4SIO (SD via memory-card port), iLink, SMB network, and ATA/IDE HDD.</td></tr><tr><td><strong>MechaPwn</strong><br><span class="tag">Exploit</span></td><td>Dragon-based MechaCon consoles (roughly SCPH-5000x-90000x)</td><td>Rewrites region/config flags for region-free use. Can break the DVD player on pre-Deckard units.</td></tr>
-        </table>
-        <p class="checkfirst"><strong>What to check first:</strong> Check the boot ROM version first via uLaunchELF: classic FMCB cannot auto-boot consoles on ROM 2.30 or 2.50 - that is most late R-chassis slims (SCPH-90000 series) and the PS2 TV. On those, use FreeDVDBoot to bootstrap, then install PS2BBL/OpenTuna. Confirm your exact model number before choosing a path.</p>
-      </div>
+<p>Beyond games, a modded console becomes a small computer for <strong>homebrew</strong> software. You can run file managers like <strong>wLaunchELF</strong>, media players, retro <strong>emulators</strong> for older systems, and a wide range of community-made tools and utilities. Many users also value <strong>region-free</strong> play, removing the lockout that normally prevents discs from other territories from booting.</p>
 
-      <div class="warn"><strong>&#9888;&#65039; Before you start:</strong> Console modding carries real risk &mdash; an interrupted install or the wrong method/file for your exact model can leave hardware unbootable. Identify your model first, back up anything important, and proceed at your own risk.</div>
+<p>The two foundations of PS2 modding are <strong>FreeMcBoot/FMCB</strong>, a memory-card exploit that auto-boots your homebrew the moment the console powers on, and <strong>FreeDVDBoot</strong>, a clever exploit hidden inside the built-in DVD player that launches homebrew from a burned DVD-R. Which one you use depends entirely on your console's internal boot ROM version, so the first real step in any setup is checking that version.</p>
 
-      <h2>What you'll need</h2>
-      <ul><li>Your exact PS2 model and boot ROM version (checked in uLaunchELF)</li><li>A PS2 memory card (a pre-installed FMCB card is the simplest start)</li><li>A USB flash drive, or a microSD + MX4SIO adapter (for game loading)</li><li>A computer to format storage and copy files</li><li>DVD-R media and a burner (only for the FreeDVDBoot route)</li><li>Open PS2 Loader, wLaunchELF, and your legally owned game backups</li></ul>
-
-      <h2>How it works &mdash; the process</h2>
-      <p>This walkthrough names the tools at each stage so you know what each one is and what it's for. Always use the latest release of each named tool.</p>
-      <ol class="phases"><li><div class="t">Identify model and ROM</div><div class="d">Find the SCPH model and boot ROM version to decide between FMCB directly or bootstrapping via FreeDVDBoot.</div></li><li><div class="t">Bootstrap homebrew</div><div class="d">Either insert a FreeMcBoot card, or burn a FreeDVDBoot DVD-R that auto-launches uLaunchELF.</div></li><li><div class="t">Install persistent exploit</div><div class="d">Write FMCB (or PS2BBL/OpenTuna) to the memory card so the launcher appears every boot.</div></li><li><div class="t">Set up the game loader</div><div class="d">Add Open PS2 Loader and copy game images to USB, MX4SIO microSD, internal HDD, or an SMB share.</div></li><li><div class="t">Optional region-free</div><div class="d">Run MechaPwn to set region/config flags (noting the pre-Deckard DVD-player caveat).</div></li><li><div class="t">Test and verify</div><div class="d">Launch OPL, boot a backup from your storage device, and confirm homebrew runs from the menu.</div></li></ol>
-
-      <h2>Which option should I pick?</h2><p>FMCB-compatible (not ROM 2.30/2.50): a pre-loaded FreeMcBoot card plus OPL is easiest. Late slim/PS2 TV on 2.30/2.50: start with FreeDVDBoot. For storage, USB works everywhere but is slow; MX4SIO microSD is near-HDD speed on slims; an internal HDD is fastest on fats.</p>
-
-      <div class="warn" style="margin-top:34px"><strong>Disclaimer:</strong> This is an original guide written for Hacks.Guide, inspired by community documentation (see <em>Credits.txt</em>). Tools, firmware versions, and methods change over time &mdash; always get the latest official release of each named tool and follow its included instructions. Modding is done entirely at your own risk.</div>
-    </main>
-    <footer class="site">
-      <div class="wrap"><a href="../index.html">&larr; Back to Hacks.Guide</a> &nbsp;&middot;&nbsp; Sources &amp; attribution in Credits.txt &nbsp;&middot;&nbsp; Copyright &copy; 2024 Nintendo Homebrew + Compiled and polished by Lexer Kindle</div>
-    </footer>
-  </body>
+<p>This guide walks you through compatibility, the gear you need, the available methods, a full installation process, and what to do once everything is working. Take it one page at a time and you will have a flexible, disc-free PS2 by the end.</p>
+</main>
+</div></div>
+<footer class="site"><div class="shell"><a href="../index.html">&larr; Back to Hacks.Guide</a> &nbsp;&middot;&nbsp; Sources &amp; attribution in Credits.txt &nbsp;&middot;&nbsp; Copyright &copy; 2024 Nintendo Homebrew + Compiled and polished by Lexer Kindle</div></footer>
+</body>
 </html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Methods — Sega Dreamcast Hacks Guide</title>
+<meta name="description" content="Sega Dreamcast Hacks Guide — Methods.">
+<link rel="icon" href="../images/favicon.ico">
+<style>
+:root{--bg:#fff;--bg-soft:#f6f6f7;--bg-card:#fff;--border:#e2e2e3;--text:#213547;--text-soft:#5c6b77;--brand:#3451b2;--accent1:#005bea;--accent2:#00c6fb;--warn-bg:#fff6e6;--warn-bd:#e0a93c;--warn-tx:#7a5500;--ok-bg:#eef4ff;--ok-bd:#3a5ccc}
+@media (prefers-color-scheme:dark){:root{--bg:#1b1b1f;--bg-soft:#202127;--bg-card:#202127;--border:#2e2e32;--text:#dfdfd6;--text-soft:#98989f;--brand:#a8b1ff;--warn-bg:#2a2310;--warn-bd:#9a7b2e;--warn-tx:#e8c66a;--ok-bg:#16202e;--ok-bd:#3a5ccc}}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
+header.site{border-bottom:1px solid var(--border);padding:14px 0;position:sticky;top:0;background:var(--bg);z-index:5}
+header.site .bar{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:16px}
+header.site .brand{font-weight:700;font-size:17px;color:var(--text)}
+header.site nav{margin-left:auto;display:flex;gap:18px;font-size:14px}
+header.site nav a{color:var(--text-soft)}
+.shell{max-width:1080px;margin:0 auto;padding:0 24px}
+.layout{display:flex;gap:34px;align-items:flex-start;padding:26px 0 10px}
+.sidebar{flex:0 0 216px;position:sticky;top:74px;font-size:14px}
+.sidebar .kick{font-size:12px;text-transform:uppercase;letter-spacing:.5px;color:var(--text-soft);margin:0 0 8px 10px}
+.sidebar a{display:block;padding:8px 11px;border-radius:8px;color:var(--text-soft);border-left:3px solid transparent}
+.sidebar a:hover{text-decoration:none;background:var(--bg-soft);color:var(--text)}
+.sidebar a.active{background:var(--ok-bg);border-left-color:var(--accent2);color:var(--text);font-weight:600}
+.sidebar .back{margin-bottom:12px}
+.content{flex:1;min-width:0;padding-bottom:30px}
+.content .badge{display:inline-block;padding:5px 13px;border-radius:999px;font-size:12px;font-weight:600;color:#fff;background:linear-gradient(120deg,var(--accent1),var(--accent2));margin-bottom:14px}
+.content h1{font-size:33px;line-height:1.15;margin:0 0 18px}
+.content h2{font-size:21px;margin:30px 0 12px}
+.content h3{font-size:16px;margin:20px 0 4px}
+.content p,.content li{font-size:15.5px}
+.callout{border:1px solid var(--ok-bd);background:var(--ok-bg);border-radius:12px;padding:16px 18px;margin:22px 0}
+.callout h2{margin:0 0 10px;font-size:17px}
+table.methods{width:100%;border-collapse:collapse;font-size:14.5px;margin:8px 0}
+table.methods th,table.methods td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+table.methods th{color:var(--text-soft);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.4px}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;margin-top:4px}
+.warn{border:1px solid var(--warn-bd);background:var(--warn-bg);color:var(--warn-tx);border-radius:12px;padding:15px 18px;margin:22px 0;font-size:14.5px}
+.warn strong{color:var(--warn-tx)}
+ol.phases{counter-reset:step;list-style:none;padding:0;margin:14px 0}
+ol.phases>li{position:relative;padding:13px 0 13px 50px;border-bottom:1px solid var(--border)}
+ol.phases>li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:12px;width:32px;height:32px;border-radius:50%;background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+ol.phases>li .t{font-weight:600;font-size:15.5px}
+ol.phases>li .d{color:var(--text-soft);font-size:14.5px;margin-top:2px}
+footer.site{border-top:1px solid var(--border);margin-top:30px;padding:22px 0;text-align:center;color:var(--text-soft);font-size:13px}
+@media (max-width:760px){.layout{flex-direction:column;padding-top:16px}.sidebar{position:static;flex:none;width:100%}.sidebar a{display:inline-block}}
+</style>
+</head>
+<body>
+<header class="site"><div class="bar"><a class="brand" href="../index.html">Hacks.Guide</a><nav><a href="../index.html">Home</a><a href="../donations.html">Donations</a></nav></div></header>
+<div class="shell"><div class="layout">
+<aside class="sidebar"><div class="back"><a href="../index.html">&larr; All guides</a></div>
+<p class="kick">Sega Dreamcast</p>
+<a href="index.html">Overview</a>
+<a href="compatibility.html">Compatibility</a>
+<a href="requirements.html">What you&#x27;ll need</a>
+<a href="methods.html" class="active">Methods</a>
+<a href="installation.html">Installation</a>
+<a href="homebrew.html">Homebrew &amp; apps</a>
+<a href="troubleshooting.html">Troubleshooting</a>
+<a href="faq.html">FAQ</a>
+<a href="credits.html">Credits</a></aside>
+<main class="content">
+<span class="badge">Sega Dreamcast</span>
+<h1>Methods</h1>
+<h2>Choosing Your Method</h2>
+<p>There are four mainstream ways to play homebrew and backups on a Dreamcast. They range from a zero-hardware approach to a premium drive replacement. Your board revision, budget, and tolerance for soldering should guide the choice.</p>
+<h3>Burned CD-R discs (MIL-CD)</h3>
+<p>The cheapest path uses no new hardware at all. Because the console natively reads the <strong>MIL-CD</strong> format, you can burn a homebrew or backup image to a blank <em>CD-R</em> with <strong>ImgBurn</strong> and boot it directly. This works best on <strong>VA1</strong> boards and well on <strong>VA0</strong>. The downsides are real, though: you still rely on the original <strong>GD-ROM</strong> laser, which is the part most likely to fail; disc reads are slow and noisy; and CD-R capacity is smaller than a true GD-ROM, so some larger titles need trimming or do not fit. Treat this route as the ideal first test and a fine long-term option for lighter use.</p>
+<h3>GDEMU</h3>
+<p>The <strong>GDEMU</strong> is the classic plug-and-play SD-based Optical Disc Emulator. You remove the GD-ROM drive, seat the board in its place, and load images on an SD card. Load times are near-instant and the machine runs quietly. The crucial caveat: <strong>GDEMU was designed around the VA1 board</strong>, and the vast majority of inexpensive clones target VA1 only. On a <strong>VA0</strong>, fitment and power can be problematic. If you have a VA1, this is the most popular and convenient upgrade.</p>
+<h3>USB-GDROM</h3>
+<p>The <strong>USB-GDROM</strong> reads images from a USB stick or SD card and is notably more forgiving across board revisions, making it a strong pick for <strong>VA0</strong> owners. It also performs <em>automatic region patching</em>, sparing you manual flag edits for many titles. One well-known tip: the board includes a <strong>12V regulator</strong> that runs hot, and many installers remove it to cut heat since the Dreamcast supplies the needed rail anyway. That removal requires basic soldering.</p>
+<h3>Terraonion MODE</h3>
+<p>The Terraonion <strong>MODE</strong> is the premium option, a multi-console ODE that also serves the Sega Saturn. It offers broad revision support, a polished interface, and high build quality, at a price well above the alternatives. If you value reliability and own multiple consoles, it justifies the cost.</p>
+<h3>Quick guidance</h3>
+<p>Have a VA1 and want simplicity? Choose <strong>GDEMU</strong>. Have a VA0, or want auto region patching? Choose <strong>USB-GDROM</strong>. Want the best regardless of price? Choose <strong>MODE</strong>. Just testing the waters, or on any board? Start with burned <strong>CD-R</strong> discs.</p>
+</main>
+</div></div>
+<footer class="site"><div class="shell"><a href="../index.html">&larr; Back to Hacks.Guide</a> &nbsp;&middot;&nbsp; Sources &amp; attribution in Credits.txt &nbsp;&middot;&nbsp; Copyright &copy; 2024 Nintendo Homebrew + Compiled and polished by Lexer Kindle</div></footer>
+</body>
+</html>
