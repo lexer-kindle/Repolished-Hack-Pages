@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>PlayStation 3 Hacks Guide</title>
-<meta name="description" content="PlayStation 3 Hacks Guide — Overview.">
+<title>Fan &amp; heatsink — PlayStation 3 Hacks Guide</title>
+<meta name="description" content="PlayStation 3 Hacks Guide — Fan &amp; heatsink.">
 <link rel="icon" href="../images/favicon.ico"><style>
 :root{--bg:#fff;--bg-soft:#f6f6f7;--bg-card:#fff;--border:#e2e2e3;--text:#213547;--text-soft:#5c6b77;--brand:#3451b2;--accent1:#0a2a72;--accent2:#1565d8;--warn-bg:#fff6e6;--warn-bd:#e0a93c;--warn-tx:#7a5500;--ok-bg:#eef4ff;--ok-bd:#3a5ccc}
 @media (prefers-color-scheme:dark){:root{--bg:#1b1b1f;--bg-soft:#202127;--bg-card:#202127;--border:#2e2e32;--text:#dfdfd6;--text-soft:#98989f;--brand:#a8b1ff;--warn-bg:#2a2310;--warn-bd:#9a7b2e;--warn-tx:#e8c66a;--ok-bg:#16202e;--ok-bd:#3a5ccc}}
@@ -51,7 +51,7 @@ footer.site{border-top:1px solid var(--border);margin-top:30px;padding:22px 0;te
 <aside class="sidebar"><div class="back"><a href="../index.html">&larr; All guides</a></div>
 <p class="kick">PlayStation 3 Guide</p>
 <p class="sec">Getting Started</p>
-<a href="index.html" class="active">Overview</a>
+<a href="index.html">Overview</a>
 <a href="what-you-can-do.html">What you can do</a>
 <a href="is-my-ps3-compatible.html">Is my PS3 compatible?</a>
 <a href="glossary.html">Glossary</a>
@@ -122,7 +122,7 @@ footer.site{border-top:1px solid var(--border);margin-top:30px;padding:22px 0;te
 <a href="ylod-overview.html">The YLOD</a>
 <a href="reflow-reball.html">Reflow vs reball</a>
 <a href="thermal-paste.html">Thermal paste</a>
-<a href="fan-cleaning.html">Fan &amp; heatsink</a>
+<a href="fan-cleaning.html" class="active">Fan &amp; heatsink</a>
 <a href="blu-ray-drive.html">Blu-ray drive</a>
 <a href="hdd-upgrade.html">Upgrading the HDD</a>
 <a href="recapping.html">Recapping</a>
@@ -147,17 +147,34 @@ footer.site{border-top:1px solid var(--border);margin-top:30px;padding:22px 0;te
 <a href="tools-list.html">Tools &amp; software</a>
 <a href="compatibility-notes.html">Compatibility notes</a>
 <a href="credits.html">Credits &amp; sources</a></aside>
-<main class="content"><span class="badge">PlayStation 3</span><h1>PlayStation 3 Hacks Guide</h1>
-<h2>PlayStation 3 Homebrew: Getting Started</h2>
-<p>Welcome to the PlayStation 3 homebrew guide. <strong>Homebrew</strong> refers to software made by the community rather than by Sony or licensed studios. Unlocking your console lets you run this software directly from the XMB menu, opening the door to media players, file managers, retro game emulators, and tools that make everyday use of the system more flexible.</p>
-<p>This guide focuses on <strong>legal, personal use</strong>: running homebrew applications, playing games you already own from backups, organizing your system, and preserving classic titles through emulation.</p>
-<div class="callout">
-<h2>What this guide covers</h2>
-<p>The PS3 community has built two main paths to homebrew, and the right one depends on your exact console model. The sections ahead walk you through identifying your hardware, understanding the terminology, weighing the trade-offs, and preparing safely before you change anything.</p>
+<main class="content"><span class="badge">PlayStation 3</span><h1>Fan &amp; heatsink</h1>
+<div class="warn">
+  <p>Never spin the fan at high speed with compressed air or a vacuum, as the motor can generate a damaging voltage spike back into the board. Hold the blades still while you clean them. Always unplug the console before opening it.</p>
 </div>
-<p>Because the PS3 spans many hardware revisions across its long life, there is no single set of steps that fits everyone. You will find <strong>many sub-pages</strong> here, each handling a specific model range, decision, or preparation task. Read them in order rather than jumping ahead.</p>
-<p>Start by confirming whether your console can take <em>Custom Firmware</em> or whether it needs the <em>Homebrew Enabler</em> route. From there, learn the vocabulary, review the risks, and back up your data. <span class="tag">beginner-friendly</span> Taking your time now prevents headaches later, so work through each page carefully before touching your console.</p>
-<div class="pager"><span></span><a href="what-you-can-do.html">What you can do &rarr;</a></div>
+
+<h2>Keeping airflow clear</h2>
+<p>The fat PS3's large blower fan pulls air across the heatsink fins to shed heat from the main chips. Over years of use, dust packs into the fins and coats the blades, throttling that airflow. A choked cooling path means higher temperatures, louder fan noise, and accelerated solder fatigue. A periodic cleaning is quick and pays off in a cooler, longer-lived console.</p>
+
+<h3>Light clean versus deep clean</h3>
+<ul>
+  <li><strong>Light clean:</strong> blow dust out of the rear vents without opening the console. Helpful but limited.</li>
+  <li><strong>Deep clean:</strong> open the console, remove the fan, and clear the heatsink fins directly. This is the only way to fully restore airflow.</li>
+</ul>
+
+<ol class="phases">
+  <li><div class="t">Open the console</div><div class="d">Remove the shell and shielding to expose the fan and heatsink assembly.</div></li>
+  <li><div class="t">Remove the fan</div><div class="d">Unplug the fan connector and lift the fan away from the heatsink.</div></li>
+  <li><div class="t">Clear the fins</div><div class="d">Blow or brush dust out of the heatsink fins, holding the fan blades steady while you clean them.</div></li>
+  <li><div class="t">Reassemble</div><div class="d">Reseat the fan, reconnect it, and close the console back up.</div></li>
+</ol>
+
+<div class="callout">
+  <h2>Do it together</h2>
+  <p>Since reaching the fan already means opening the console, this is the ideal moment to also replace the thermal paste while everything is apart.</p>
+</div>
+
+<p><span class="tag">cooling</span> <span class="tag">dust</span></p>
+<div class="pager"><a href="thermal-paste.html">&larr; Thermal paste</a><a href="blu-ray-drive.html">Blu-ray drive &rarr;</a></div>
 </main></div></div>
 <footer class="site"><div class="shell"><a href="../index.html">&larr; Back to Hacks.Guide</a> &nbsp;&middot;&nbsp; Sources &amp; attribution in Credits.txt &nbsp;&middot;&nbsp; Copyright &copy; 2024 Nintendo Homebrew + Compiled and polished by Lexer Kindle</div></footer>
 </body></html>

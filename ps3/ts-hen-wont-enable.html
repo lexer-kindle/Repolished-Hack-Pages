@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>PlayStation 3 Hacks Guide</title>
-<meta name="description" content="PlayStation 3 Hacks Guide — Overview.">
+<title>HEN won&#x27;t enable — PlayStation 3 Hacks Guide</title>
+<meta name="description" content="PlayStation 3 Hacks Guide — HEN won&#x27;t enable.">
 <link rel="icon" href="../images/favicon.ico"><style>
 :root{--bg:#fff;--bg-soft:#f6f6f7;--bg-card:#fff;--border:#e2e2e3;--text:#213547;--text-soft:#5c6b77;--brand:#3451b2;--accent1:#0a2a72;--accent2:#1565d8;--warn-bg:#fff6e6;--warn-bd:#e0a93c;--warn-tx:#7a5500;--ok-bg:#eef4ff;--ok-bd:#3a5ccc}
 @media (prefers-color-scheme:dark){:root{--bg:#1b1b1f;--bg-soft:#202127;--bg-card:#202127;--border:#2e2e32;--text:#dfdfd6;--text-soft:#98989f;--brand:#a8b1ff;--warn-bg:#2a2310;--warn-bd:#9a7b2e;--warn-tx:#e8c66a;--ok-bg:#16202e;--ok-bd:#3a5ccc}}
@@ -51,7 +51,7 @@ footer.site{border-top:1px solid var(--border);margin-top:30px;padding:22px 0;te
 <aside class="sidebar"><div class="back"><a href="../index.html">&larr; All guides</a></div>
 <p class="kick">PlayStation 3 Guide</p>
 <p class="sec">Getting Started</p>
-<a href="index.html" class="active">Overview</a>
+<a href="index.html">Overview</a>
 <a href="what-you-can-do.html">What you can do</a>
 <a href="is-my-ps3-compatible.html">Is my PS3 compatible?</a>
 <a href="glossary.html">Glossary</a>
@@ -130,7 +130,7 @@ footer.site{border-top:1px solid var(--border);margin-top:30px;padding:22px 0;te
 <a href="controller-repair.html">DualShock 3 repair</a>
 <a href="cleaning.html">Cleaning &amp; care</a>
 <p class="sec">Troubleshooting</p>
-<a href="ts-hen-wont-enable.html">HEN won&#x27;t enable</a>
+<a href="ts-hen-wont-enable.html" class="active">HEN won&#x27;t enable</a>
 <a href="ts-cfw-wont-boot.html">CFW won&#x27;t boot</a>
 <a href="ts-ylod.html">Shows the YLOD</a>
 <a href="ts-game-wont-load.html">Game won&#x27;t load</a>
@@ -147,17 +147,35 @@ footer.site{border-top:1px solid var(--border);margin-top:30px;padding:22px 0;te
 <a href="tools-list.html">Tools &amp; software</a>
 <a href="compatibility-notes.html">Compatibility notes</a>
 <a href="credits.html">Credits &amp; sources</a></aside>
-<main class="content"><span class="badge">PlayStation 3</span><h1>PlayStation 3 Hacks Guide</h1>
-<h2>PlayStation 3 Homebrew: Getting Started</h2>
-<p>Welcome to the PlayStation 3 homebrew guide. <strong>Homebrew</strong> refers to software made by the community rather than by Sony or licensed studios. Unlocking your console lets you run this software directly from the XMB menu, opening the door to media players, file managers, retro game emulators, and tools that make everyday use of the system more flexible.</p>
-<p>This guide focuses on <strong>legal, personal use</strong>: running homebrew applications, playing games you already own from backups, organizing your system, and preserving classic titles through emulation.</p>
-<div class="callout">
-<h2>What this guide covers</h2>
-<p>The PS3 community has built two main paths to homebrew, and the right one depends on your exact console model. The sections ahead walk you through identifying your hardware, understanding the terminology, weighing the trade-offs, and preparing safely before you change anything.</p>
+<main class="content"><span class="badge">PlayStation 3</span><h1>HEN won&#x27;t enable</h1>
+<h2>PS3HEN Won't Enable</h2>
+<p>You launch the HEN exploit page but it never reaches the success screen, or the XMB shows no extra options afterward. <span class="tag">HEN</span> <span class="tag">Exploit</span></p>
+
+<h3>Likely Causes</h3>
+<ul>
+  <li>Firmware mismatch between your console version and the HEN package.</li>
+  <li>A previous HEN session is still partially active in memory.</li>
+  <li>The exploit host files were copied to the wrong place or are corrupt.</li>
+  <li>System cache holding a stale state after an update.</li>
+</ul>
+
+<h3>Fixes</h3>
+<ol>
+  <li>Confirm your exact firmware under <strong>Settings &gt; System &gt; System Information</strong>, then verify the HEN release targets that exact version, including the HFW/HAN variant.</li>
+  <li>Fully power the console down with the rear switch for thirty seconds, then cold boot. This clears lingering exploit state more reliably than a standby restart.</li>
+  <li>Rebuild the database and clear the browser cache, then load the exploit page fresh rather than from history.</li>
+  <li>Re-copy the package files to the root of internal storage, checking that filenames and folder names match exactly.</li>
+</ol>
+
+<div class="warn">
+  <p>If the exploit briefly succeeds then crashes, lower memory pressure by closing the browser between attempts. Repeated rapid retries can leave the system unstable.</p>
 </div>
-<p>Because the PS3 spans many hardware revisions across its long life, there is no single set of steps that fits everyone. You will find <strong>many sub-pages</strong> here, each handling a specific model range, decision, or preparation task. Read them in order rather than jumping ahead.</p>
-<p>Start by confirming whether your console can take <em>Custom Firmware</em> or whether it needs the <em>Homebrew Enabler</em> route. From there, learn the vocabulary, review the risks, and back up your data. <span class="tag">beginner-friendly</span> Taking your time now prevents headaches later, so work through each page carefully before touching your console.</p>
-<div class="pager"><span></span><a href="what-you-can-do.html">What you can do &rarr;</a></div>
+
+<div class="callout">
+  <h2>Still Stuck?</h2>
+  <p>Reinstall HFW over your current firmware to restore a known-good base, then apply HEN again. A clean reinstall resolves the majority of persistent enable failures.</p>
+</div>
+<div class="pager"><a href="cleaning.html">&larr; Cleaning &amp; care</a><a href="ts-cfw-wont-boot.html">CFW won&#x27;t boot &rarr;</a></div>
 </main></div></div>
 <footer class="site"><div class="shell"><a href="../index.html">&larr; Back to Hacks.Guide</a> &nbsp;&middot;&nbsp; Sources &amp; attribution in Credits.txt &nbsp;&middot;&nbsp; Copyright &copy; 2024 Nintendo Homebrew + Compiled and polished by Lexer Kindle</div></footer>
 </body></html>
