@@ -4,57 +4,81 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Nintendo NES Hacks Guide</title>
-    <meta name="description" content="Mods and restoration for the original NES.">
+    <meta name="description" content="Play your full library from one SD card and fix the console&#x27;s most common fault: the worn 72-pin cartridge connector.">
     <link rel="icon" href="../images/favicon.ico">
     <style>
-      :root{--bg:#fff;--bg-soft:#f6f6f7;--bg-card:#fff;--border:#e2e2e3;--text:#213547;--text-soft:#5c6b77;--brand:#3451b2;--brand-soft:#3a5ccc;--accent1:#b3000c;--accent2:#e60012}
-      @media (prefers-color-scheme:dark){:root{--bg:#1b1b1f;--bg-soft:#202127;--bg-card:#202127;--border:#2e2e32;--text:#dfdfd6;--text-soft:#98989f;--brand:#a8b1ff;--brand-soft:#5c73e7}}
-      *{box-sizing:border-box}
-      body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-      a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
-      .wrap{max-width:860px;margin:0 auto;padding:0 24px}
-      header.site{border-bottom:1px solid var(--border);padding:14px 0}
-      header.site .wrap{display:flex;align-items:center;gap:16px}
-      header.site .brand{font-weight:700;font-size:18px;color:var(--text)}
-      header.site nav{margin-left:auto;display:flex;gap:20px;font-size:14px}
-      header.site nav a{color:var(--text-soft)}
-      .hero{text-align:center;padding:64px 0 8px}
-      .badge{display:inline-block;padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600;color:#fff;background:linear-gradient(120deg,var(--accent1),var(--accent2));margin-bottom:20px}
-      .hero h1{font-size:44px;line-height:1.1;margin:0 0 12px}
-      .hero p{font-size:19px;color:var(--text-soft);max-width:600px;margin:0 auto}
-      .cta{display:block;max-width:520px;margin:36px auto 0;background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:28px;text-align:center;transition:border-color .2s,transform .2s}
-      .cta:hover{border-color:var(--brand);transform:translateY(-2px);text-decoration:none}
-      .cta .go{display:inline-block;margin-top:14px;padding:12px 26px;border-radius:10px;background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;font-weight:600;font-size:16px}
-      .cta .go:hover{text-decoration:none;opacity:.92}
-      .note{max-width:520px;margin:22px auto 0;font-size:13px;color:var(--text-soft);text-align:center}
-      footer.site{border-top:1px solid var(--border);margin-top:64px;padding:24px 0;text-align:center;color:var(--text-soft);font-size:13px}
-    </style>
+:root{--bg:#fff;--bg-soft:#f6f6f7;--bg-card:#fff;--border:#e2e2e3;--text:#213547;--text-soft:#5c6b77;--brand:#3451b2;--accent1:#b3000c;--accent2:#e60012;--warn-bg:#fff6e6;--warn-bd:#e0a93c;--warn-tx:#7a5500;--ok-bg:#eef4ff;--ok-bd:#3a5ccc}
+@media (prefers-color-scheme:dark){:root{--bg:#1b1b1f;--bg-soft:#202127;--bg-card:#202127;--border:#2e2e32;--text:#dfdfd6;--text-soft:#98989f;--brand:#a8b1ff;--warn-bg:#2a2310;--warn-bd:#9a7b2e;--warn-tx:#e8c66a;--ok-bg:#16202e;--ok-bd:#3a5ccc}}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:840px;margin:0 auto;padding:0 24px}
+header.site{border-bottom:1px solid var(--border);padding:14px 0}
+header.site .wrap{display:flex;align-items:center;gap:16px}
+header.site .brand{font-weight:700;font-size:18px;color:var(--text)}
+header.site nav{margin-left:auto;display:flex;gap:20px;font-size:14px}
+header.site nav a{color:var(--text-soft)}
+.hero{padding:46px 0 6px}
+.badge{display:inline-block;padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600;color:#fff;background:linear-gradient(120deg,var(--accent1),var(--accent2));margin-bottom:16px}
+.hero h1{font-size:40px;line-height:1.1;margin:0 0 12px}
+.hero p.lede{font-size:19px;color:var(--text-soft);margin:0}
+h2{font-size:23px;margin:38px 0 14px}
+p,li{font-size:16px}
+.callout{border:1px solid var(--ok-bd);background:var(--ok-bg);border-radius:12px;padding:18px 20px;margin:24px 0}
+.callout h2{margin:0 0 12px;font-size:19px}
+table.methods{width:100%;border-collapse:collapse;font-size:15px;margin-top:6px}
+table.methods th,table.methods td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+table.methods th{color:var(--text-soft);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.4px}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;margin-top:4px}
+.checkfirst{margin-top:16px}
+.warn{border:1px solid var(--warn-bd);background:var(--warn-bg);color:var(--warn-tx);border-radius:12px;padding:16px 20px;margin:24px 0;font-size:15px}
+.warn strong{color:var(--warn-tx)}
+ol.phases{counter-reset:step;list-style:none;padding:0;margin:14px 0}
+ol.phases>li{position:relative;padding:14px 0 14px 52px;border-bottom:1px solid var(--border)}
+ol.phases>li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:12px;width:34px;height:34px;border-radius:50%;background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+ol.phases>li .t{font-weight:600;font-size:16px}
+ol.phases>li .d{color:var(--text-soft);font-size:15px;margin-top:2px}
+footer.site{border-top:1px solid var(--border);margin-top:56px;padding:24px 0;text-align:center;color:var(--text-soft);font-size:13px}
+</style>
   </head>
   <body>
     <header class="site">
-      <div class="wrap">
-        <a class="brand" href="../index.html">Hacks.Guide</a>
-        <nav>
-          <a href="../index.html">Home</a>
-          <a href="../donations.html">Donations</a>
-        </nav>
-      </div>
+      <div class="wrap"><span class="brand">Nintendo NES Hacks Guide</span><nav><a href="../index.html">Home</a></nav></div>
     </header>
     <main class="wrap">
       <section class="hero">
         <span class="badge">Nintendo NES</span>
         <h1>Nintendo NES Hacks Guide</h1>
-        <p>Mods and restoration for the original NES.</p>
-        <a class="cta" href="https://consolemods.org/wiki/NES:NES_Mods_Wiki" target="_blank" rel="noopener">
-          <div style="font-weight:600;font-size:18px;color:var(--text)">Open the full Nintendo NES guide</div>
-          <div style="font-size:14px;color:var(--text-soft);margin-top:6px">Step-by-step instructions, hosted on the ConsoleMods Wiki</div>
-          <span class="go">Start the guide &rarr;</span>
-        </a>
-        <p class="note">This guide is maintained by the <a href="https://consolemods.org/wiki/Main_Page" target="_blank" rel="noopener">ConsoleMods Wiki</a>, a community-driven console modding resource. Always read every step carefully — modding can carry risk to your hardware.</p>
+        <p class="lede">Play your full library from one SD card and fix the console&#x27;s most common fault: the worn 72-pin cartridge connector.</p>
       </section>
+
+      <h2>What this is for</h2>
+      <p>The NES is a cartridge console, so modding centers on flashcarts that load ROMs from SD rather than software exploits. The most common real-world repair is the front-loader&#x27;s worn 72-pin connector - the cause of the infamous blinking power light. Optional mods add RGB video and proper expansion (EXP) audio for Famicom sound chips.</p>
+
+      <div class="callout">
+        <h2>&#9881;&#65039; Methods, versions &amp; compatibility &mdash; read this first</h2>
+        <table class="methods">
+          <tr><th>Method</th><th>Works on</th><th>Notes</th></tr>
+          <tr><td><strong>EverDrive N8 Pro</strong><br><span class="tag">Flashcart</span></td><td>Front-loader NES, top-loader NES, Famicom (separate shapes)</td><td>SD-card flashcart with in-game menu, save states, cheats, and mapper support; 72-pin (NES) and 60-pin (Famicom) versions.</td></tr><tr><td><strong>72-pin connector refurbishment</strong><br><span class="tag">Restoration</span></td><td>Front-loading NES</td><td>Cleaning plus reseating the spring pins; restores reliable contact better than a cheap replacement.</td></tr><tr><td><strong>72-pin connector replacement</strong><br><span class="tag">Restoration</span></td><td>Front-loading NES</td><td>Drop-in slot swap; quick fix for the blinking light, though aftermarket parts vary.</td></tr><tr><td><strong>Expansion (EXP) audio mod</strong><br><span class="tag">Audio</span></td><td>NES (front and top loader)</td><td>Routes Famicom expansion-chip audio to the mixer; with the N8 Pro, set jumper EXP9-SND.</td></tr><tr><td><strong>RGB / video mod</strong><br><span class="tag">Video</span></td><td>NES</td><td>RGB PPU swap or kits like the NESRGB for clean RGB/HDMI instead of composite.</td></tr>
+        </table>
+        <p class="checkfirst"><strong>What to check first:</strong> Flashcarts are not firmware exploits, so there&#x27;s no system firmware to patch. The key NES issue is the 72-pin connector: a blinking red power light is almost always a worn or dirty connector, not a dead console, and should be refurbished or replaced first. Famicom games on a NES flashcart need a 72-to-60-pin adapter.</p>
+      </div>
+
+      <div class="warn"><strong>&#9888;&#65039; Before you start:</strong> Console modding carries real risk &mdash; an interrupted install or the wrong method/file for your exact model can leave hardware unbootable. Identify your model first, back up anything important, and proceed at your own risk.</div>
+
+      <h2>What you'll need</h2>
+      <ul><li>EverDrive N8 Pro (correct NES or Famicom version)</li><li>A formatted SD/microSD card for ROMs</li><li>A replacement or refurbishment kit for the 72-pin connector</li><li>Phillips/security-bit screwdrivers to open the shell</li><li>Isopropyl alcohol and a brush/swabs for cleaning</li><li>Soldering iron and flux (only for EXP audio or RGB mods)</li></ul>
+
+      <h2>How it works &mdash; the process</h2>
+      <p>This walkthrough names the tools at each stage so you know what each one is and what it's for. Always use the latest release of each named tool.</p>
+      <ol class="phases"><li><div class="t">Diagnose the fault</div><div class="d">Confirm whether a blinking light or gray screen is a dirty cartridge, a worn 72-pin connector, or a deeper board fault.</div></li><li><div class="t">Restore the connector</div><div class="d">Open the console, clean the slot with isopropyl alcohol, then refurbish or replace the 72-pin connector.</div></li><li><div class="t">Set up the flashcart</div><div class="d">Load ROMs onto an SD card, insert the EverDrive N8 Pro, and verify the menu, save states, and mappers.</div></li><li><div class="t">Optional A/V and audio mods</div><div class="d">Install an RGB mod (e.g. NESRGB) and perform the EXP audio mod so Famicom expansion music plays correctly.</div></li></ol>
+
+      <h2>Which option should I pick?</h2><p>If your NES blinks or shows a gray screen, fix the 72-pin connector first. Add the EverDrive N8 Pro for the whole library; only attempt RGB or EXP audio mods if you&#x27;re comfortable soldering.</p>
+
+      <div class="warn" style="margin-top:34px"><strong>Disclaimer:</strong> This is an original guide written for Hacks.Guide, inspired by community documentation (see <em>Credits.txt</em>). Tools, firmware versions, and methods change over time &mdash; always get the latest official release of each named tool and follow its included instructions. Modding is done entirely at your own risk.</div>
     </main>
     <footer class="site">
-      <div class="wrap"><a href="../index.html">&larr; Back to Hacks.Guide</a> &nbsp;&middot;&nbsp; Copyright &copy; 2024 Nintendo Homebrew + Compiled and polished by Lexer Kindle</div>
+      <div class="wrap"><a href="../index.html">&larr; Back to Hacks.Guide</a> &nbsp;&middot;&nbsp; Sources &amp; attribution in Credits.txt &nbsp;&middot;&nbsp; Copyright &copy; 2024 Nintendo Homebrew + Compiled and polished by Lexer Kindle</div>
     </footer>
   </body>
 </html>

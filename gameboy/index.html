@@ -4,57 +4,81 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Game Boy Hacks Guide</title>
-    <meta name="description" content="Backlights and mods for the Game Boy, Pocket, and Color.">
+    <meta name="description" content="Light up the classic screen with a backlight or IPS panel, sharpen the audio, and load every game from one flashcart.">
     <link rel="icon" href="../images/favicon.ico">
     <style>
-      :root{--bg:#fff;--bg-soft:#f6f6f7;--bg-card:#fff;--border:#e2e2e3;--text:#213547;--text-soft:#5c6b77;--brand:#3451b2;--brand-soft:#3a5ccc;--accent1:#b3000c;--accent2:#e60012}
-      @media (prefers-color-scheme:dark){:root{--bg:#1b1b1f;--bg-soft:#202127;--bg-card:#202127;--border:#2e2e32;--text:#dfdfd6;--text-soft:#98989f;--brand:#a8b1ff;--brand-soft:#5c73e7}}
-      *{box-sizing:border-box}
-      body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-      a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
-      .wrap{max-width:860px;margin:0 auto;padding:0 24px}
-      header.site{border-bottom:1px solid var(--border);padding:14px 0}
-      header.site .wrap{display:flex;align-items:center;gap:16px}
-      header.site .brand{font-weight:700;font-size:18px;color:var(--text)}
-      header.site nav{margin-left:auto;display:flex;gap:20px;font-size:14px}
-      header.site nav a{color:var(--text-soft)}
-      .hero{text-align:center;padding:64px 0 8px}
-      .badge{display:inline-block;padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600;color:#fff;background:linear-gradient(120deg,var(--accent1),var(--accent2));margin-bottom:20px}
-      .hero h1{font-size:44px;line-height:1.1;margin:0 0 12px}
-      .hero p{font-size:19px;color:var(--text-soft);max-width:600px;margin:0 auto}
-      .cta{display:block;max-width:520px;margin:36px auto 0;background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:28px;text-align:center;transition:border-color .2s,transform .2s}
-      .cta:hover{border-color:var(--brand);transform:translateY(-2px);text-decoration:none}
-      .cta .go{display:inline-block;margin-top:14px;padding:12px 26px;border-radius:10px;background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;font-weight:600;font-size:16px}
-      .cta .go:hover{text-decoration:none;opacity:.92}
-      .note{max-width:520px;margin:22px auto 0;font-size:13px;color:var(--text-soft);text-align:center}
-      footer.site{border-top:1px solid var(--border);margin-top:64px;padding:24px 0;text-align:center;color:var(--text-soft);font-size:13px}
-    </style>
+:root{--bg:#fff;--bg-soft:#f6f6f7;--bg-card:#fff;--border:#e2e2e3;--text:#213547;--text-soft:#5c6b77;--brand:#3451b2;--accent1:#b3000c;--accent2:#e60012;--warn-bg:#fff6e6;--warn-bd:#e0a93c;--warn-tx:#7a5500;--ok-bg:#eef4ff;--ok-bd:#3a5ccc}
+@media (prefers-color-scheme:dark){:root{--bg:#1b1b1f;--bg-soft:#202127;--bg-card:#202127;--border:#2e2e32;--text:#dfdfd6;--text-soft:#98989f;--brand:#a8b1ff;--warn-bg:#2a2310;--warn-bd:#9a7b2e;--warn-tx:#e8c66a;--ok-bg:#16202e;--ok-bd:#3a5ccc}}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
+.wrap{max-width:840px;margin:0 auto;padding:0 24px}
+header.site{border-bottom:1px solid var(--border);padding:14px 0}
+header.site .wrap{display:flex;align-items:center;gap:16px}
+header.site .brand{font-weight:700;font-size:18px;color:var(--text)}
+header.site nav{margin-left:auto;display:flex;gap:20px;font-size:14px}
+header.site nav a{color:var(--text-soft)}
+.hero{padding:46px 0 6px}
+.badge{display:inline-block;padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600;color:#fff;background:linear-gradient(120deg,var(--accent1),var(--accent2));margin-bottom:16px}
+.hero h1{font-size:40px;line-height:1.1;margin:0 0 12px}
+.hero p.lede{font-size:19px;color:var(--text-soft);margin:0}
+h2{font-size:23px;margin:38px 0 14px}
+p,li{font-size:16px}
+.callout{border:1px solid var(--ok-bd);background:var(--ok-bg);border-radius:12px;padding:18px 20px;margin:24px 0}
+.callout h2{margin:0 0 12px;font-size:19px}
+table.methods{width:100%;border-collapse:collapse;font-size:15px;margin-top:6px}
+table.methods th,table.methods td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+table.methods th{color:var(--text-soft);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.4px}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;margin-top:4px}
+.checkfirst{margin-top:16px}
+.warn{border:1px solid var(--warn-bd);background:var(--warn-bg);color:var(--warn-tx);border-radius:12px;padding:16px 20px;margin:24px 0;font-size:15px}
+.warn strong{color:var(--warn-tx)}
+ol.phases{counter-reset:step;list-style:none;padding:0;margin:14px 0}
+ol.phases>li{position:relative;padding:14px 0 14px 52px;border-bottom:1px solid var(--border)}
+ol.phases>li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:12px;width:34px;height:34px;border-radius:50%;background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center}
+ol.phases>li .t{font-weight:600;font-size:16px}
+ol.phases>li .d{color:var(--text-soft);font-size:15px;margin-top:2px}
+footer.site{border-top:1px solid var(--border);margin-top:56px;padding:24px 0;text-align:center;color:var(--text-soft);font-size:13px}
+</style>
   </head>
   <body>
     <header class="site">
-      <div class="wrap">
-        <a class="brand" href="../index.html">Hacks.Guide</a>
-        <nav>
-          <a href="../index.html">Home</a>
-          <a href="../donations.html">Donations</a>
-        </nav>
-      </div>
+      <div class="wrap"><span class="brand">Game Boy Hacks Guide</span><nav><a href="../index.html">Home</a></nav></div>
     </header>
     <main class="wrap">
       <section class="hero">
         <span class="badge">Game Boy</span>
         <h1>Game Boy Hacks Guide</h1>
-        <p>Backlights and mods for the Game Boy, Pocket, and Color.</p>
-        <a class="cta" href="https://consolemods.org/wiki/Game_Boy:Game_Boy_Mods_Wiki" target="_blank" rel="noopener">
-          <div style="font-weight:600;font-size:18px;color:var(--text)">Open the full Game Boy guide</div>
-          <div style="font-size:14px;color:var(--text-soft);margin-top:6px">Step-by-step instructions, hosted on the ConsoleMods Wiki</div>
-          <span class="go">Start the guide &rarr;</span>
-        </a>
-        <p class="note">This guide is maintained by the <a href="https://consolemods.org/wiki/Main_Page" target="_blank" rel="noopener">ConsoleMods Wiki</a>, a community-driven console modding resource. Always read every step carefully — modding can carry risk to your hardware.</p>
+        <p class="lede">Light up the classic screen with a backlight or IPS panel, sharpen the audio, and load every game from one flashcart.</p>
       </section>
+
+      <h2>What this is for</h2>
+      <p>The original Game Boy line (DMG, Pocket, Color) is cartridge-based, so software modding means flashcarts that run ROMs from SD. The headline hardware mods address the dim stock LCD: backlight kits and full IPS screen replacements transform readability. Audio mods (prosound, amplifiers) and the classic bivert improve things further.</p>
+
+      <div class="callout">
+        <h2>&#9881;&#65039; Methods, versions &amp; compatibility &mdash; read this first</h2>
+        <table class="methods">
+          <tr><th>Method</th><th>Works on</th><th>Notes</th></tr>
+          <tr><td><strong>EverDrive-GB X7</strong><br><span class="tag">Flashcart</span></td><td>DMG, Pocket, Color (and GBA in GB mode)</td><td>Top-tier flashcart with a built-in real-time clock for Pokemon, in-game menu, save states and cheats.</td></tr><tr><td><strong>EZ-Flash Junior</strong><br><span class="tag">Flashcart</span></td><td>DMG, Pocket, Color (and GBA in GB mode)</td><td>Cheaper SD-based alternative with RTC support; weaker performance than the EverDrive.</td></tr><tr><td><strong>FunnyPlaying Q5 IPS kit</strong><br><span class="tag">Video</span></td><td>DMG, Pocket (MGB), Color (CGB) - model-specific kits</td><td>Full IPS LCD replacement with palette presets and pixel-grid modes. The DMG version needs minor shell trimming.</td></tr><tr><td><strong>Backlight panel mod</strong><br><span class="tag">Video</span></td><td>DMG, Pocket, Color</td><td>Adds a backlight behind the original LCD; cheaper and simpler than a full IPS swap.</td></tr><tr><td><strong>Bivert mod</strong><br><span class="tag">Hardware</span></td><td>DMG (most common)</td><td>Rotates a polarizer and adds a hex inverter to boost contrast; often paired with a backlight.</td></tr><tr><td><strong>Prosound / audio mod</strong><br><span class="tag">Audio</span></td><td>DMG (most common), Color</td><td>Taps cleaner line-level audio and can add an amplifier and new speaker; popular for chiptune use.</td></tr>
+        </table>
+        <p class="checkfirst"><strong>What to check first:</strong> Flashcarts are hardware, not firmware exploits, so there is no software to flash. The critical distinction is model: the DMG, the smaller Pocket (MGB), and the Game Boy Color (CGB) each have different screen sizes and boards, so backlight and IPS kits are model-specific - buy the kit that matches your exact console.</p>
+      </div>
+
+      <div class="warn"><strong>&#9888;&#65039; Before you start:</strong> Console modding carries real risk &mdash; an interrupted install or the wrong method/file for your exact model can leave hardware unbootable. Identify your model first, back up anything important, and proceed at your own risk.</div>
+
+      <h2>What you'll need</h2>
+      <ul><li>EverDrive-GB X7 or EZ-Flash Junior plus an SD/microSD card</li><li>A model-correct IPS or backlight kit (DMG, MGB, or CGB)</li><li>Tri-wing and Phillips screwdrivers to open the shell</li><li>Soldering iron, flux, and thin wire for backlight/bivert/audio mods</li><li>A replacement shell or lens if trimming is needed (DMG IPS)</li><li>Optional: amplifier board, new speaker, and volume pot for audio</li></ul>
+
+      <h2>How it works &mdash; the process</h2>
+      <p>This walkthrough names the tools at each stage so you know what each one is and what it's for. Always use the latest release of each named tool.</p>
+      <ol class="phases"><li><div class="t">Identify your model</div><div class="d">Confirm whether you have a DMG, Pocket (MGB), or Color (CGB) and buy screen/audio kits made for that console.</div></li><li><div class="t">Flashcart setup</div><div class="d">Load ROMs to an SD card and insert the EverDrive-GB X7 (or EZ-Flash Junior); verify the menu, RTC, and saves.</div></li><li><div class="t">Screen upgrade</div><div class="d">Install a Q5 IPS panel or a backlight kit, soldering where required and trimming the DMG shell for the larger view.</div></li><li><div class="t">Contrast and audio mods</div><div class="d">Optionally add a bivert mod for contrast and a prosound/amp setup with a new speaker for cleaner sound.</div></li><li><div class="t">Reassemble and test</div><div class="d">Close the shell, check the display palette/grid options and audio, and confirm flashcart games boot and save.</div></li></ol>
+
+      <h2>Which option should I pick?</h2><p>For the biggest visual upgrade, choose a FunnyPlaying Q5 IPS kit matched to your model; a backlight-only kit is the budget path. Pair with the EverDrive-GB X7 (best features) or the cheaper EZ-Flash Junior.</p>
+
+      <div class="warn" style="margin-top:34px"><strong>Disclaimer:</strong> This is an original guide written for Hacks.Guide, inspired by community documentation (see <em>Credits.txt</em>). Tools, firmware versions, and methods change over time &mdash; always get the latest official release of each named tool and follow its included instructions. Modding is done entirely at your own risk.</div>
     </main>
     <footer class="site">
-      <div class="wrap"><a href="../index.html">&larr; Back to Hacks.Guide</a> &nbsp;&middot;&nbsp; Copyright &copy; 2024 Nintendo Homebrew + Compiled and polished by Lexer Kindle</div>
+      <div class="wrap"><a href="../index.html">&larr; Back to Hacks.Guide</a> &nbsp;&middot;&nbsp; Sources &amp; attribution in Credits.txt &nbsp;&middot;&nbsp; Copyright &copy; 2024 Nintendo Homebrew + Compiled and polished by Lexer Kindle</div>
     </footer>
   </body>
 </html>
