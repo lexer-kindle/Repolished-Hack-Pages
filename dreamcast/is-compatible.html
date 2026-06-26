@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Is my Dreamcast compatible? — Sega Dreamcast Hacks Guide</title>
+<meta name="description" content="Sega Dreamcast Hacks Guide — Is my Dreamcast compatible?.">
+<link rel="icon" href="../images/favicon.svg"><style>
+:root{--bg:#fff;--bg-soft:#f6f6f7;--bg-card:#fff;--border:#e2e2e3;--text:#213547;--text-soft:#5c6b77;--brand:#3451b2;--accent1:#005bea;--accent2:#00c6fb;--warn-bg:#fff6e6;--warn-bd:#e0a93c;--warn-tx:#7a5500;--ok-bg:#eef4ff;--ok-bd:#3a5ccc}
+@media (prefers-color-scheme:dark){:root{--bg:#1b1b1f;--bg-soft:#202127;--bg-card:#202127;--border:#2e2e32;--text:#dfdfd6;--text-soft:#98989f;--brand:#a8b1ff;--warn-bg:#2a2310;--warn-bd:#9a7b2e;--warn-tx:#e8c66a;--ok-bg:#16202e;--ok-bd:#3a5ccc}}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
+header.site{border-bottom:1px solid var(--border);padding:14px 0;position:sticky;top:0;background:var(--bg);z-index:5}
+header.site .bar{max-width:1140px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:16px}
+header.site .brand{font-weight:700;font-size:17px;color:var(--text)}
+header.site nav{margin-left:auto;display:flex;gap:18px;font-size:14px}
+header.site nav a{color:var(--text-soft)}
+.shell{max-width:1140px;margin:0 auto;padding:0 24px}
+.layout{display:flex;gap:34px;align-items:flex-start;padding:24px 0 10px}
+.sidebar{flex:0 0 246px;position:sticky;top:74px;max-height:calc(100vh - 90px);overflow-y:auto;font-size:13.5px;padding-right:6px}
+.sidebar .back{margin-bottom:10px}
+.sidebar .kick{font-size:14px;font-weight:700;color:var(--text);margin:0 0 10px 6px}
+.sidebar .sec{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--text-soft);margin:14px 0 4px 6px;font-weight:700}
+.sidebar a{display:block;padding:5px 9px;border-radius:7px;color:var(--text-soft);border-left:3px solid transparent;line-height:1.35}
+.sidebar a:hover{text-decoration:none;background:var(--bg-soft);color:var(--text)}
+.sidebar a.active{background:var(--ok-bg);border-left-color:var(--accent2);color:var(--text);font-weight:600}
+.content{flex:1;min-width:0;padding-bottom:20px}
+.content .badge{display:inline-block;padding:5px 13px;border-radius:999px;font-size:12px;font-weight:600;color:#fff;background:linear-gradient(120deg,var(--accent1),var(--accent2));margin-bottom:14px}
+.content h1{font-size:32px;line-height:1.15;margin:0 0 18px}
+.content h2{font-size:21px;margin:28px 0 12px}
+.content h3{font-size:16px;margin:18px 0 4px}
+.content p,.content li{font-size:15.5px}
+.callout{border:1px solid var(--ok-bd);background:var(--ok-bg);border-radius:12px;padding:16px 18px;margin:22px 0}
+.callout h2{margin:0 0 10px;font-size:17px}
+table.methods{width:100%;border-collapse:collapse;font-size:14.5px;margin:8px 0}
+table.methods th,table.methods td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--border);vertical-align:top}
+table.methods th{color:var(--text-soft);font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.4px}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;margin-top:4px}
+.warn{border:1px solid var(--warn-bd);background:var(--warn-bg);color:var(--warn-tx);border-radius:12px;padding:15px 18px;margin:22px 0;font-size:14.5px}
+.warn strong{color:var(--warn-tx)}
+ol.phases{counter-reset:step;list-style:none;padding:0;margin:14px 0}
+ol.phases>li{position:relative;padding:13px 0 13px 50px;border-bottom:1px solid var(--border)}
+ol.phases>li::before{counter-increment:step;content:counter(step);position:absolute;left:0;top:12px;width:32px;height:32px;border-radius:50%;background:linear-gradient(120deg,var(--accent1),var(--accent2));color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+ol.phases>li .t{font-weight:600;font-size:15.5px}
+ol.phases>li .d{color:var(--text-soft);font-size:14.5px;margin-top:2px}
+.pager{display:flex;justify-content:space-between;gap:16px;margin-top:34px;padding-top:18px;border-top:1px solid var(--border);font-size:14px}
+footer.site{border-top:1px solid var(--border);margin-top:30px;padding:22px 0;text-align:center;color:var(--text-soft);font-size:13px}
+@media (max-width:820px){.layout{flex-direction:column;padding-top:14px}.sidebar{position:static;flex:none;width:100%;max-height:none}}
+</style></head><body>
+<header class="site"><div class="bar"><a class="brand" href="../index.html">A-Hackers-Guide</a><nav><a href="../index.html">Home</a><a href="../donations.html">Donations</a></nav></div></header>
+<div class="shell"><div class="layout">
+<aside class="sidebar"><div class="back"><a href="../index.html">&larr; All guides</a></div>
+<p class="kick">Sega Dreamcast Guide</p>
+<p class="sec">Getting Started</p>
+<a href="index.html">Overview</a>
+<a href="what-you-can-do.html">What you can do</a>
+<a href="is-compatible.html" class="active">Is my Dreamcast compatible?</a>
+<a href="glossary.html">Glossary</a>
+<a href="before-you-begin.html">Before you begin</a>
+<a href="choosing-a-method.html">Choosing a method</a>
+<a href="safety-and-risks.html">Safety &amp; risks</a>
+<a href="what-youll-need.html">What you&#x27;ll need</a>
+<p class="sec">Models &amp; Hardware</p>
+<a href="model-identification.html">Identifying your model</a>
+<a href="va0-vs-va1.html">VA0 vs VA1</a>
+<a href="regions.html">Regions</a>
+<a href="controllers.html">Controllers</a>
+<a href="bios-versions.html">BIOS versions</a>
+<p class="sec">ODEs &amp; Discs</p>
+<a href="methods-overview.html">Methods overview</a>
+<a href="gdemu.html">GDEMU</a>
+<a href="usb-gdrom.html">USB-GDROM</a>
+<a href="terraonion-mode.html">Terraonion MODE</a>
+<a href="burned-disc-milcd.html">Burned-disc (MIL-CD)</a>
+<a href="ode-comparison.html">ODE comparison</a>
+<a href="installing-gdemu.html">Installing GDEMU</a>
+<a href="installing-usb-gdrom.html">Installing USB-GDROM</a>
+<a href="sd-card-prep.html">SD card preparation</a>
+<a href="game-loading.html">Loading games</a>
+<a href="gdi-cdi-formats.html">GDI/CDI formats</a>
+<a href="vga-region-patching.html">VGA &amp; region patching</a>
+<a href="dreamshell.html">DreamShell</a>
+<p class="sec">Software</p>
+<a href="homebrew-overview.html">Homebrew overview</a>
+<a href="running-homebrew.html">Running homebrew</a>
+<a href="homebrew-games.html">Homebrew games</a>
+<a href="dreamshell-apps.html">DreamShell apps</a>
+<a href="save-management.html">Save management</a>
+<a href="vmu.html">The VMU</a>
+<p class="sec">Video &amp; AV</p>
+<a href="av-overview.html">AV overview</a>
+<a href="vga-output.html">VGA output</a>
+<a href="rgb-scart.html">RGB SCART</a>
+<a href="svideo.html">S-Video</a>
+<a href="hdmi-options.html">HDMI options</a>
+<a href="av-troubleshooting.html">AV troubleshooting</a>
+<p class="sec">Maintenance &amp; Repair</p>
+<a href="recapping.html">Recapping</a>
+<a href="gdrom-laser.html">GD-ROM laser</a>
+<a href="fan-cooling.html">Fan &amp; cooling</a>
+<a href="controller-repair.html">Controller repair</a>
+<a href="power-supply.html">Power supply</a>
+<a href="battery-vmu.html">VMU battery</a>
+<p class="sec">Troubleshooting</p>
+<a href="ts-wont-read-discs.html">Won&#x27;t read discs</a>
+<a href="ts-ode-not-detected.html">ODE not detected</a>
+<a href="ts-no-video.html">No video</a>
+<a href="ts-vga.html">VGA incompatibility</a>
+<p class="sec">Reference</p>
+<a href="faq.html">FAQ</a>
+<a href="tools-list.html">Tools &amp; software</a>
+<a href="compatibility-notes.html">Compatibility notes</a>
+<a href="credits.html">Credits &amp; sources</a></aside>
+<main class="content"><span class="badge">Sega Dreamcast</span><h1>Is my Dreamcast compatible?</h1>
+<h2>Is My Dreamcast Compatible?</h2>
+<p>Compatibility depends almost entirely on two things: your console's board revision and which modding method you intend to use. The table below summarises the common scenarios so you can gauge your options at a glance.</p>
+<table class="methods">
+<tr><th>Method</th><th>Best board</th><th>Hardware mod?</th><th>Notes</th></tr>
+<tr><td>Burned disc (MIL-CD)</td><td>VA0 / VA1</td><td>No</td><td>Most units boot CD-Rs; <span class="tag">VA1</span> tends to read burned media most reliably</td></tr>
+<tr><td>GDEMU</td><td>VA1</td><td>Yes (drop-in)</td><td>Solderless swap; designed around the VA1 connector</td></tr>
+<tr><td>USB-GDROM</td><td>VA0 / VA1</td><td>Yes</td><td>Works across revisions; includes automatic region patching</td></tr>
+<tr><td>Terraonion MODE</td><td>VA0 / VA1</td><td>Yes</td><td>Premium ODE supporting both board types</td></tr>
+</table>
+<div class="callout">
+<h2>Identify your board first</h2>
+<p>Before buying anything, open the console and check whether the mainboard is marked <strong>VA0</strong> or <strong>VA1</strong>. GDEMU in particular is built around the VA1 layout, so confirming this prevents an expensive mismatch.</p>
+</div>
+<p>If you only want to run homebrew or backups occasionally, the MIL-CD route requires no purchase beyond blank discs. If your drive is dying or you want the best experience, an ODE matched to your board revision is the way to go. See <strong>VA0 vs VA1</strong> and <strong>ODE comparison</strong> for the detail behind these recommendations.</p>
+<div class="pager"><a href="what-you-can-do.html">&larr; What you can do</a><a href="glossary.html">Glossary &rarr;</a></div>
+</main></div></div>
+<footer class="site"><div class="shell"><a href="../index.html">&larr; Back to A-Hackers-Guide</a> &nbsp;&middot;&nbsp; <a href="https://github.com/A-Hackers-Guide" target="_blank" rel="noopener">GitHub</a> &nbsp;&middot;&nbsp; <a href="https://ko-fi.com/lelandkirk" target="_blank" rel="noopener">&#9749; Support on Ko-fi</a> &nbsp;&middot;&nbsp; Sources in Credits.txt &nbsp;&middot;&nbsp; Copyright &copy; 2024 Nintendo Homebrew + Lexer Kindle</div></footer>
+</body></html>

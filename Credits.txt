@@ -1,0 +1,20 @@
+Editor and Polisher: Lexer Kindle
+
+Copyright © 2024 Nintendo Homebrew + Compiled and polished by Lexer Kindle
+
+------------------------------------------------------------
+Guide sources & attribution
+------------------------------------------------------------
+
+Nintendo console guides (3DS, Wii, Wii U, Switch, DSi, Vita) are based on the
+hacks.guide / Nintendo Homebrew community guides — https://hacks.guide
+
+PlayStation, Xbox, and Sega console guide information is sourced from the
+ConsoleMods Wiki — https://consolemods.org — used under the
+Creative Commons Attribution (CC BY) license.
+
+iOS guide information is based on the community iOS jailbreaking guides.
+
+Console tile photography is sourced from Wikimedia Commons (primarily the
+Evan Amos / Vanamo Online Game Museum public-domain collection) —
+https://commons.wikimedia.org

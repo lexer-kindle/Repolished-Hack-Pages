@@ -1,0 +1,1 @@
+const s="/images/screenshots/soundhax/soundhax-root-layout.png",o="/images/screenshots/soundhax/soundhax-welcome.png",n="/images/screenshots/soundhax/soundhax-launch.png";export{s as _,o as a,n as b};

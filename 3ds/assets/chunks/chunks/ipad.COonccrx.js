@@ -1,0 +1,1 @@
+const s="/images/windows.png",o="/images/macos.png",i="/images/linux.png",a="/images/android.png",m="/images/chromeos.png",n="/images/iphone.svg",p="/images/ipad.svg";export{s as _,o as a,i as b,a as c,m as d,n as e,p as f};

@@ -1,0 +1,1 @@
+import{_ as e,o as a,c as o,ae as l}from"./chunks/framework.DweSwlXA.js";const h=JSON.parse('{"title":"FAQ","description":"","frontmatter":{},"headers":[],"relativePath":"it_IT/faq.md","filePath":"it_IT/faq.md"}'),n={name:"it_IT/faq.md"};function r(t,i,s,c,d,u){return a(),o("div",null,[...i[0]||(i[0]=[l("",60)])])}const p=e(n,[["render",r]]);export{h as __pageData,p as default};

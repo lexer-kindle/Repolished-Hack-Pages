@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /.github/
+Disallow: /LICENSE
+Disallow: /Credits.txt
+
+Sitemap: https://eu.org

@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as l,ae as n}from"./chunks/framework.DweSwlXA.js";const d=JSON.parse('{"title":"GYIK","description":"","frontmatter":{},"headers":[],"relativePath":"hu_HU/faq.md","filePath":"hu_HU/faq.md"}'),i={name:"hu_HU/faq.md"};function o(r,a,s,k,h,m){return t(),l("div",null,[...a[0]||(a[0]=[n("",60)])])}const g=e(i,[["render",o]]);export{d as __pageData,g as default};
